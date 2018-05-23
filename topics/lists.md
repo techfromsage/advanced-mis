@@ -4,8 +4,6 @@ title: "Data dictionary: Lists"
 body_class: lists
 ---
 
-### Overview
-
 <dl>
   <dt>Entity</dt>
   <dd>Lists</dd>
@@ -14,7 +12,7 @@ body_class: lists
   <dd>Reading list data</dd>
 
   <dt>Database location</dt>
-  <dd>`public.f_rl_lists`</dd>
+  <dd><code>public.f_rl_lists</code></dd>
 </dl>
 
 ### Columns
