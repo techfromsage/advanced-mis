@@ -1,7 +1,7 @@
 ---
 layout: site
 title: Hierarchy
-body_class: Hierarchy
+body_class: hierarchy
 ---
 
 Coming soon
