@@ -1,0 +1,19 @@
+{% if page.category %}
+<nav>
+  <h4>Other topics in {{ page.category }}:</h4>
+  <ul>
+    {% for p in site.pages %}
+    {% if p.category == page.category %}
+    {% if p.title != page.title %}
+    <li>
+      <a href="{{ site.url }}/topics/{{p.body_class}}.html">{{p.title}}</a>
+    </li>
+    {% endif%}
+    {% endif%}
+    {% endfor %}
+  </ul>
+</nav>
+{% endif %}
+<p role="contentinfo">
+  <small>Hosted on GitHub Pages &mdash; <a href="https://github.com/talis">&copy; Talis Group Ltd</a></small>
+</p>

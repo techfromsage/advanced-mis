@@ -1,0 +1,50 @@
+<nav id="nav" class="navigation" role="navigation">
+    <ul>
+        <li{% if page.body_class == 'home' %} class="active"{% endif %}>
+            <a href="{{ site.url }}/">Home</a>
+        </li>
+    </ul>
+    <h2 class="gamma">Getting Started</h2>
+    <ul>
+        <li{% if page.body_class == 'tools' %} class="active"{% endif %}>
+            <a href="{{ site.url }}/topics/tools.html">Choosing a tool</a>
+        </li>
+        <li{% if page.body_class == 'connecting' %} class="active"{% endif %}>
+            <a href="{{ site.url }}/topics/connecting.html">Connecting</a>
+        </li>
+        <li{% if page.body_class == 'pushing' %} class="active"{% endif %}>
+            <a href="{{ site.url }}/topics/pushing.html">Pushing content</a>
+        </li>
+    </ul>
+    <h2 class="gamma">Application data</h2>
+    <ul>
+        <li{% if page.body_class == 'app-data' %} class="active"{% endif %}>
+            <a href="{{ site.url }}/topics/app-data.html">Overview</a>
+        </li>
+        <li{% if page.body_class == 'lists' %} class="active"{% endif %}>
+            <a href="{{ site.url }}/topics/lists.html">Lists</a>
+        </li>
+        <li{% if page.body_class == 'items' %} class="active"{% endif %}>
+            <a href="{{ site.url }}/topics/items.html">Items</a>
+        </li>
+        <li{% if page.body_class == 'users' %} class="active"{% endif %}>
+            <a href="{{ site.url }}/topics/users.html">Users</a>
+        </li>
+        <li{% if page.body_class == 'hierarchy' %} class="active"{% endif %}>
+            <a href="{{ site.url }}/topics/hierarchy.html">Hierarchy</a>
+        </li>
+        <li{% if page.body_class == 'digitisations' %} class="active"{% endif %}>
+            <a href="{{ site.url }}/topics/digitisations.html">Digitisations</a>
+        </li>
+    </ul>
+    <h2 class="gamma">Event data</h2>
+    <ul>
+        <li{% if page.body_class == 'event-data' %} class="active"{% endif %}>
+            <a href="{{ site.url }}/topics/event-data.html">Overview</a>
+        </li>
+        <li{% if page.body_class == 'event-dict' %} class="active"{% endif %}>
+            <a href="{{ site.url }}/topics/event-dict.html">Dictionary</a>
+        </li>
+    </ul>
+    <a id="close-btn" class="btn" href="#top"><span aria-hidden>✖</span><span class="sr-only">Close menu</span></a>
+</nav>
