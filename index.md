@@ -1,9 +1,8 @@
 ---
 layout: site
+title: Welcome
 body_class: home
 ---
-
-## Welcome
 
 ### What is Advanced MIS?
 
