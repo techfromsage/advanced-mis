@@ -9,7 +9,7 @@ which reading lists when, how often LTI integrations are utilised, how students 
 the Talis Player, how academics are using the list editing tools.
 
 It can give you a good picture of how your rollout of Talis Aspire is progressing, feeding into management
-reporting, or alternatively as a rich source for your student analytics programme.
+dashboards, or alternatively as a rich source for your student analytics programme.
 
 Event data is streamed into your Advanced MIS data warehouse in near real time. In the future, events
 can also be emitted to an [xAPI](https://xapi.com/overview/) or [IMS Caliper](https://www.imsglobal.org/activity/caliper) endpoint of your choosing.
@@ -26,3 +26,5 @@ only kept for a retention period before being dropped, as follows:
 * Raw event data is kept for up to 7 days, giving you enough time to export it on a nightly basis if required
 * 1hr sliding window aggregated data is kept for 30 days
 * 24hr sliding window aggregated data is kept for 36 months
+
+Review the [dictionary]({{ site.baseurl }}/topics/event-dict.html) to discover what event classes and properties are available.
