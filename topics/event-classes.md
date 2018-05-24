@@ -8,6 +8,17 @@ Each event has a `class` which defines the type and characteristics of the event
 of event supported by Advanced MIS, and whether they are available in raw or timeseries form, are listed
 below:
 
-| Class | Description | Raw data? | Timeseries data? |
-| --- | --- | :-: | --- |
-| `list.view` | A view of a reading list |
+| Class | Description | Timeseries data? | Raw data? |
+| --- | --- | :-: | :-: |
+| `login.success` | A user signed into Talis via SSO |  <i class="fas fa-check-circle"><span class="sr-only">Available</span></i>  |  <i class="fas fa-times-circle"><span class="sr-only">Not available</span></i>  |
+| `bookmarkCreated` | A bookmark was created |  <i class="fas fa-check-circle"><span class="sr-only">Available</span></i>  |  <i class="fas fa-times-circle"><span class="sr-only">Not available</span></i>  |
+| `addToList` | An item was added to a list |  <i class="fas fa-check-circle"><span class="sr-only">Available</span></i>  |  <i class="fas fa-times-circle"><span class="sr-only">Not available</span></i>  |
+| `list.publish` | A list was published |  <i class="fas fa-check-circle"><span class="sr-only">Available</span></i>  |  <i class="fas fa-times-circle"><span class="sr-only">Not available</span></i>  |
+| `player.timer.2` | A resource was viewed in the player for an amount of time |  <i class="fas fa-check-circle"><span class="sr-only">Available</span></i>  |  <i class="fas fa-times-circle"><span class="sr-only">Not available</span></i>  |
+| `player.view` | A resource was opened in the player by a user |  <i class="fas fa-check-circle"><span class="sr-only">Available</span></i>  |  <i class="fas fa-times-circle"><span class="sr-only">Not available</span></i>  |
+| `list.view` | A list was viewed |  <i class="fas fa-check-circle"><span class="sr-only">Available</span></i>  |  <i class="fas fa-check-circle"><span class="sr-only">Available</span></i>  |
+| `list.item.view` | An item in a list was expanded/navigated to  |  <i class="fas fa-check-circle"><span class="sr-only">Available</span></i>  |  <i class="fas fa-check-circle"><span class="sr-only">Available</span></i>  |
+| `lti.link.followed` | An LTI launch to a reading list was invoked |  <i class="fas fa-check-circle"><span class="sr-only">Available</span></i>  |  <i class="fas fa-check-circle"><span class="sr-only">Available</span></i>  |
+| `reviews.actions.status.1` | An acquisitions review's status changed |  <i class="fas fa-check-circle"><span class="sr-only">Available</span></i>  |  <i class="fas fa-times-circle"><span class="sr-only">Not available</span></i>  |
+| `reviews.actions.setOutcome.1` | An acquisitions review outcome was set |  <i class="fas fa-check-circle"><span class="sr-only">Available</span></i>  |  <i class="fas fa-times-circle"><span class="sr-only">Not available</span></i>  |
+| `reviews.actions.assignUSer.1` | An acquisitions review was assigned to a user |  <i class="fas fa-check-circle"><span class="sr-only">Available</span></i>  |  <i class="fas fa-times-circle"><span class="sr-only">Not available</span></i>  |
