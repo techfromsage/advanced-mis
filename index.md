@@ -10,7 +10,7 @@ Tha Advanced Management Information System (MIS) is a feature available to [Tali
 
 It provides an SQL-compatible data warehouse which includes your Talis Aspire data, plus feeds of user events, allowing you to build reports, dashboard and other custom MIS components.
 
-In addition to the Talis data, You can add your own data to the warehouse, up to an overall [limit]({{ site.baseurl }}/topics/limits.html).
+In addition to the Talis data, you can add your own data to the warehouse, up to an overall [limit]({{ site.baseurl }}/topics/limits.html).
 
 Advanced MIS is currently in limited preview with selected customers and will be rolling out to others in due course.
 
