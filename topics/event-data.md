@@ -16,15 +16,15 @@ can also be emitted to an [xAPI](https://xapi.com/overview/) or [IMS Caliper](ht
 
 Inside the warehouse, data exists in three forms:
 
-1. Raw events - a single record for each recorded event, with all properties available
-2. 1hr sliding window aggregate - a single record per hour for a class of events, grouped by up to 4 pre-defined properties
-3. 24hr sliding window aggregate - a single record per 24hr for a class of events, grouped by up to 4 pre-defined properties
+1. [Raw events]({{ site.baseurl }}/topics/raw.html) - a single record for each recorded event, with all properties available
+2. [Timeseries]({{ site.baseurl }}/topics/timeseries.html) 1hr sliding window aggregate - a single record per hour for a class of events, grouped by up to 4 pre-defined dimensions
+3. [Timeseries]({{ site.baseurl }}/topics/timeseries.html) 24hr sliding window aggregate - a single record per 24hr for a class of events, grouped by up to 4 pre-defined dimensions
 
 Due to the nature of event data, it has the potential to become very large over time. Therefore it is
 only kept for a retention period before being dropped, as follows:
 
 * Raw event data is kept for up to 7 days, giving you enough time to export it on a nightly basis if required
-* 1hr sliding window aggregated data is kept for 30 days
-* 24hr sliding window aggregated data is kept for 36 months
+* Timeseries 1hr sliding window aggregated data is kept for 30 days
+* Timeseries 24hr sliding window aggregated data is kept for 36 months
 
-Review the [dictionary]({{ site.baseurl }}/topics/event-dict.html) to discover what event classes and properties are available.
+Review the [event classes]({{ site.baseurl }}/topics/event-classes.html) documentation to discover what is available.

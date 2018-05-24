@@ -45,8 +45,14 @@
         <li{% if page.body_class == 'event-data' %} class="active"{% endif %}>
             <a href="{{ site.baseurl }}/topics/event-data.html">Overview</a>
         </li>
-        <li{% if page.body_class == 'event-dict' %} class="active"{% endif %}>
-            <a href="{{ site.baseurl }}/topics/event-dict.html">Dictionary</a>
+        <li{% if page.body_class == 'event-classes' %} class="active"{% endif %}>
+            <a href="{{ site.baseurl }}/topics/event-classes.html">Event classes</a>
+        </li>
+        <li{% if page.body_class == 'raw' %} class="active"{% endif %}>
+        <a href="{{ site.baseurl }}/topics/raw.html">Raw events</a>
+        </li>
+        <li{% if page.body_class == 'timeseries' %} class="active"{% endif %}>
+        <a href="{{ site.baseurl }}/topics/timeseries.html">Timeseries</a>
         </li>
     </ul>
     <a id="close-btn" class="btn" href="#top"><span aria-hidden>✖</span><span class="sr-only">Close menu</span></a>
