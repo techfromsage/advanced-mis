@@ -20,13 +20,14 @@ body_class: lists
 | Column Name | Datatype | Description | Example
 | --- | --- | --- | --- | --- |
 | `url` | `VARCHAR(4096)` | Canonical URL of the reading list |
+| `guid` | `VARCHAR(4096)` | Globally Unique ID for the reading list. This should be used for joining to other data. | `DE53F159-8AE9-F8D4-6518-263DED7D56E9` |
 | `title` | `VARCHAR(4096)` | Reading list title |
-| `status` | `VARCHAR(255)` | Permitted values `Draft`, `Published`, `Puiblished with Unpublished Changes` |
+| `status` | `VARCHAR(255)` | Permitted values `Draft`, `Published`, `Puiblished with Unpublished Changes` | `Draft`
 | `created_by` | `VARCHAR(4096)` | Name of creator in format `lastname, firstname` |
 | `hierarchy_url` | `VARCHAR(4096)` | Canonical URL of hierarchy record, can be used to link to [hierarchy]({{ site.baseurl }}/topics/hierarchy.html) |
-| `time_period` | `VARCHAR(4096)` | Textual name of time period |
-| `section_count` | `INTEGER` | Number of sections in this list |
-| `item_count` | `INTEGER` | Number of items in this list |
+| `time_period` | `VARCHAR(4096)` | Textual name of time period | `Autumn Term 18`
+| `section_count` | `INTEGER` | Number of sections in this list | `23`
+| `item_count` | `INTEGER` | Number of items in this list | `170`
 | `owner` | `VARCHAR(4096)` | Timestamp of when the list was created |
 | `year_created` | `INTEGER` | Year of when the list was created | `2018`
 | `month_created` | `INTEGER` | Month of when the list was created, values `1-12` | `12`
@@ -44,5 +45,7 @@ body_class: lists
 | `month_last_reviewed` | `INTEGER` | Month of when the list was last reviewed, values `1-12` | `12`
 | `week_last_reviewed` | `INTEGER` | ISO 8601 week of when the list was last reviewed, note Monday is the start of the ISO 8601 week, values `1-53` | `52`
 | `dow_last_reviewed` | `INTEGER` | Day of week of when the list was last reviewed, values `0-6`, Sunday is `0` | 5
-| `privacy_control` | `VARCHAR(255)`` | `Private` or `Public` |
-| `student_numbers` | `INTEGER` | Numbers of students |
+| `privacy_control` | `VARCHAR(255)` | `Private` or `Public` | `Public`
+| `student_numbers` | `INTEGER` | Numbers of students | `84`
+
+**WARNING:** Because this is a beta service, the data dictionary is subject to change. For that reason always refer to column names directly in your SQL statements, not column positions.
