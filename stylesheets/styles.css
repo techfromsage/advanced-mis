@@ -425,3 +425,10 @@ abbr {
   width:  1px !important;
   overflow: hidden;
 }
+
+i.yes {
+  color: #3F9E76;
+}
+i.no {
+  color: #A02F2B;
+}
