@@ -7,7 +7,7 @@ body_class: raw
 Raw events are stored in the table `f_event_raw_daily` and will be available for a period according
 to the [limits]({{ site.baseurl }}/topics/limits.html) before being dropped.
 
-Each row shares common columns, with up to 4 extended columns (`property_1` through `property_4`) having
+Each row shares common columns, with up to 6 extended columns (`property_1` through `property_6`) having
 a variable definition based on the class of event.
 
 ### All rows
@@ -18,7 +18,7 @@ a variable definition based on the class of event.
 | `event_class` | `VARCHAR(128` | Class of event - see below for `property_*` field mappings | `list.view` |
 | `event_timestamp` | `TIMESTAMP` | Time event occurred | `2018-05-23 00:52:43.0` |
 | `performed_by` | `VARCHAR(128)` | User's Globally Unique ID, can be joined to [`public.f_rl_users.talis_guid`]({{ site.baseurl }}/topics/users.html). May be set to `anon` or null if user unidentified | `myoVK7wfosXXWlw` |
-| `property_*` | `VARCHAR(128)` | Where `*` is value from `1` through `4`, definitions vary by `event_class` | |
+| `property_*` | `VARCHAR(128)` | Where `*` is value from `1` through `6`, definitions vary by `event_class` | |
 | `full_data_base64` | `VARCHAR(2048)` | Base 64 encoding of full event properties, in JSON format | |
 
 
