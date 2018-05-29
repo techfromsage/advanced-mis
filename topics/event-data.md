@@ -11,8 +11,9 @@ the Talis Player, how academics are using the list editing tools.
 It can give you a good picture of how your rollout of Talis Aspire is progressing, feeding into management
 dashboards, or alternatively as a rich source for your student analytics programme.
 
-Event data is streamed into your Advanced MIS data warehouse in near real time. In the future, events
-can also be emitted to an [xAPI](https://xapi.com/overview/) or [IMS Caliper](https://www.imsglobal.org/activity/caliper) endpoint of your choosing.
+Event data is streamed into your Advanced MIS data warehouse in near real time. That means it arrives usually within a few seconds of the event taking place, however in busy periods this could take a little longer.
+
+In the future, it will be possible for events to be emitted to an [xAPI](https://xapi.com/overview/) or [IMS Caliper](https://www.imsglobal.org/activity/caliper) endpoint of your choosing.
 
 Inside the warehouse, data exists in three forms:
 
@@ -20,8 +21,8 @@ Inside the warehouse, data exists in three forms:
 2. [Timeseries]({{ site.baseurl }}/topics/timeseries.html) 1hr sliding window aggregate - a single record per hour for a class of events, grouped by up to 4 pre-defined dimensions
 3. [Timeseries]({{ site.baseurl }}/topics/timeseries.html) 24hr sliding window aggregate - a single record per 24hr for a class of events, grouped by up to 4 pre-defined dimensions
 
-Due to the nature of event data, it has the potential to become very large over time. Therefore it is
-only kept for a retention period before being dropped, as follows:
+Due to the nature of event data, there is the potential over time for events to fill your warehouse to it's [size limit]({{ site.baseurl}}/topics/limits.html).
+Therefore event data is subject to a retention period before being dropped, as follows:
 
 * Raw event data is kept for up to 7 days, giving you enough time to export it on a nightly basis if required
 * Timeseries 1hr sliding window aggregated data is kept for 30 days
