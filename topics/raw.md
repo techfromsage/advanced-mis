@@ -51,4 +51,4 @@ a variable definition based on the class of event.
 | --- | --- | --- |
 | `property_1` | Tenant code | `broadminster` |
 | `property_2` | An identifier matching the course context the LTI launch was made from. Where available, is one of `custom_canvas_course_id`, `custom_knowledge_grouping_code`, `lis_course_offering_sourcedid`, `context_id` from the LTI launch payload, in that order of preference.  | `ABF201` |
-| `property_3` | The user ID from the LTI payload, either from `user_id` or `lis_person_sourcedid` in that order of preference   | `3` |
+| `property_3` | The user ID from the LTI payload, either from `lis_person_sourcedid` or `user_id` in that order of preference   | `3` |
