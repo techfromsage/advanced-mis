@@ -6,7 +6,7 @@ body_class: home
 
 ### What is Advanced MIS?
 
-Tha Advanced Management Information System (MIS) is a feature available to [Talis Aspire](https://www.talis.com) Unlimited subscribers.
+Advanced Management Information System (Advanced MIS) is a feature available to [Talis Aspire](https://www.talis.com) Unlimited subscribers.
 
 It provides an SQL-compatible data warehouse which includes your Talis Aspire data, plus feeds of user events, allowing you to build reports, dashboard and other custom MIS components.
 
