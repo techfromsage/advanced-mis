@@ -34,6 +34,7 @@ these columns depends on the `event_class` in question and is documented in deta
 
 
 <br/>
+<a name="login-success"></a>
 
 ### Events with class `login.success`
 
@@ -42,6 +43,7 @@ these columns depends on the `event_class` in question and is documented in deta
 | `dimension_1` | SSO Service ID, which is usually equivalent to the tenancy short code | `broadminster` |
 
 <br/>
+<a name="bookmark-created"></a>
 
 ### Events with class `bookmark.created`
 
@@ -51,6 +53,7 @@ these columns depends on the `event_class` in question and is documented in deta
 | `dimension_2` | User's Globally Unique ID, can be joined to [`public.f_rl_users.talis_guid`]({{ site.baseurl }}/topics/users.html). | `myoVK7wfosXXWlw` |
 
 <br/>
+<a name="addToList"></a>
 
 ### Events with class `addToList`
 
@@ -60,6 +63,7 @@ these columns depends on the `event_class` in question and is documented in deta
 | `dimension_2` | User's Globally Unique ID, can be joined to [`public.f_rl_users.talis_guid`]({{ site.baseurl }}/topics/users.html). | `myoVK7wfosXXWlw` |
 
 <br/>
+<a name="list-publish"></a>
 
 ### Events with class `list.publish`
 
@@ -69,91 +73,171 @@ these columns depends on the `event_class` in question and is documented in deta
 | `dimension_2` | User's Globally Unique ID, can be joined to [`public.f_rl_users.talis_guid`]({{ site.baseurl }}/topics/users.html). | `myoVK7wfosXXWlw` |
 
 <br/>
+<a name="player-timer-2"></a>
 
 ### Events with class `player.timer.2`
 
 | Column | Description | Example |
 | --- | --- | --- |
-| `dimension_1` | SSO Service ID, which is usually equivalent to the tenancy short code | `broadminster` |
+| `dimension_1` | The tenancy short code | `broadminster` |
 | `dimension_2` | The module ID relating to the content being played |
 | `dimension_3` | The resource ID relating to the content being played |
 | `dimension_4` | User's Globally Unique ID, can be joined to [`public.f_rl_users.talis_guid`]({{ site.baseurl }}/topics/users.html). | `myoVK7wfosXXWlw` |
 | `event_sum` | The sum in milliseconds of the time spent playing content for the given dimensions and window | `55212` |
 
 <br/>
+<a name="player-timer-2-contributors"></a>
+
+### Events with class `player.timer.2.contributors`
+
+| Column | Description | Example |
+| --- | --- | --- |
+| `dimension_1` | The tenancy short code | `broadminster` |
+| `dimension_2` | The module ID relating to the content being played |
+| `dimension_3` | The resource ID relating to the content being played |
+| `dimension_4` | User's Globally Unique ID, can be joined to [`public.f_rl_users.talis_guid`]({{ site.baseurl }}/topics/users.html). | `myoVK7wfosXXWlw` |
+| `event_sum` | The sum in milliseconds of the time spent playing content for the given dimensions and window | `55212` |
+
+<br/>
+<a name="player-view"></a>
 
 ### Events with class `player.view`
 
 | Column | Description | Example |
 | --- | --- | --- |
-| `dimension_1` | SSO Service ID, which is usually equivalent to the tenancy short code | `broadminster` |
+| `dimension_1` | The tenancy short code | `broadminster` |
 | `dimension_2` | The module ID relating to the content being played |
 | `dimension_3` | The resource ID relating to the content being played |
 | `dimension_4` | User's Globally Unique ID, can be joined to [`public.f_rl_users.talis_guid`]({{ site.baseurl }}/topics/users.html). | `myoVK7wfosXXWlw` |
 
 <br/>
+<a name="player-view-contributors"></a>
+
+### Events with class `player.view.contributors`
+
+| Column | Description | Example |
+| --- | --- | --- |
+| `dimension_1` | The tenancy short code | `broadminster` |
+| `dimension_2` | The module ID relating to the content being played |
+| `dimension_3` | The resource ID relating to the content being played |
+| `dimension_4` | User's Globally Unique ID, can be joined to [`public.f_rl_users.talis_guid`]({{ site.baseurl }}/topics/users.html). | `myoVK7wfosXXWlw` |
+
+<br/>
+<a name="player-annotate-createannotation"></a>
+
+### Events with class `player.annotate.createannotation`
+
+| Column | Description | Example |
+| --- | --- | --- |
+| `dimension_1` | The tenancy short code | `broadminster` |
+| `dimension_2` | The module ID relating to the content being played |
+| `dimension_3` | The resource ID relating to the content being played |
+| `dimension_4` | User's Globally Unique ID, can be joined to [`public.f_rl_users.talis_guid`]({{ site.baseurl }}/topics/users.html). | `myoVK7wfosXXWlw` |
+
+<br/>
+<a name="player-annotate-createreply"></a>
+
+### Events with class `player.annotate.createreply`
+
+| Column | Description | Example |
+| --- | --- | --- |
+| `dimension_1` | The tenancy short code | `broadminster` |
+| `dimension_2` | The module ID relating to the content being played |
+| `dimension_3` | The resource ID relating to the content being played |
+| `dimension_4` | User's Globally Unique ID, can be joined to [`public.f_rl_users.talis_guid`]({{ site.baseurl }}/topics/users.html). | `myoVK7wfosXXWlw` |
+
+<br/>
+<a name="player-download"></a>
+
+### Events with class `player.download`
+
+| Column | Description | Example |
+| --- | --- | --- |
+| `dimension_1` | The tenancy short code | `broadminster` |
+| `dimension_2` | The module ID relating to the content being played |
+| `dimension_3` | The resource ID relating to the content being played |
+| `dimension_4` | User's Globally Unique ID, can be joined to [`public.f_rl_users.talis_guid`]({{ site.baseurl }}/topics/users.html). | `myoVK7wfosXXWlw` |
+
+<br/>
+<a name="list-view"></a>
 
 ### Events with class `list.view`
 
 | Column | Description | Example |
 | --- | --- | --- |
-| `dimension_1` | Tenant code | `broadminster` |
+| `dimension_1` | The tenancy short code | `broadminster` |
 | `dimension_2` | List's Globally Unique ID, can be joined to [`public.f_rl_lists.guid`]({{ site.baseurl }}/topics/lists.html)   | `DE53F159-8AE9-F8D4-6518-263DED7D56E9` |
 | `dimension_3` | User's Globally Unique ID, can be joined to [`public.f_rl_users.talis_guid`]({{ site.baseurl }}/topics/users.html). | `myoVK7wfosXXWlw` |
 
 <br/>
+<a name="list-item-view"></a>
 
 ### Events with class `list.item.view`
 
 | Column | Description | Example |
 | --- | --- | --- |
-| `dimension_1` | Tenant code | `broadminster` |
+| `dimension_1` | The tenancy short code | `broadminster` |
 | `dimension_2` | List's Globally Unique ID, can be joined to [`public.f_rl_lists.guid`]({{ site.baseurl }}/topics/lists.html)   | `DE53F159-8AE9-F8D4-6518-263DED7D56E9` |
 | `dimension_3` | List item's Globally Unique ID, can be joined to [`public.f_rl_items.item_guid`]({{ site.baseurl }}/topics/items.html)   | `DE53F159-8AE9-F8D4-6518-263DED7D56E9` |
 | `dimension_4` | User's Globally Unique ID, can be joined to [`public.f_rl_users.talis_guid`]({{ site.baseurl }}/topics/users.html). | `myoVK7wfosXXWlw` |
 
 <br/>
+<a name="lti-link-followed"></a>
 
 ### Events with class `lti.link.followed`
 
 | Column | Description | Example |
 | --- | --- | --- |
-| `dimension_1` | Tenant code | `broadminster` |
+| `dimension_1` | The tenancy short code | `broadminster` |
 | `dimension_2` | An identifier matching the course context the LTI launch was made from. Where available, is one of `custom_canvas_course_id`, `custom_knowledge_grouping_code`, `lis_course_offering_sourcedid`, `context_id` from the LTI launch payload, in that order of preference.  | `ABF201` |
 | `dimension_3` | The user ID from the LTI payload, either from `lis_person_sourcedid` or `user_id` in that order of preference   | `3` |
 
 <br/>
+<a name="reviews-actions-status-1"></a>
 
 ### Events with class `reviews.actions.status.1`
 
 | Column | Description | Example |
 | --- | --- | --- |
-| `dimension_1` | Tenant code | `broadminster` |
+| `dimension_1` | The tenancy short code | `broadminster` |
 | `dimension_2` | Status the review was set to |
 | `dimension_3` | Globally Unique ID of the review | `myoVK7wfosXXWlw` |
 | `dimension_4` | User's Globally Unique ID, can be joined to [`public.f_rl_users.talis_guid`]({{ site.baseurl }}/topics/users.html). | `myoVK7wfosXXWlw` |
 
 <br/>
+<a name="reviews-actions-setOutcome-1"></a>
 
 ### Events with class `reviews.actions.setOutcome.1`
 
 | Column | Description | Example |
 | --- | --- | --- |
-| `dimension_1` | Tenant code | `broadminster` |
+| `dimension_1` | The tenancy short code | `broadminster` |
 | `dimension_2` | Outcome the review was set to |
 | `dimension_3` | Globally Unique ID of the review | `myoVK7wfosXXWlw` |
 | `dimension_4` | User's Globally Unique ID, can be joined to [`public.f_rl_users.talis_guid`]({{ site.baseurl }}/topics/users.html). | `myoVK7wfosXXWlw` |
 
 <br/>
+<a name="reviews-actions-assignUser-1"></a>
 
 ### Events with class `reviews.actions.assignUser.1`
 
 | Column | Description | Example |
 | --- | --- | --- |
-| `dimension_1` | Tenant code | `broadminster` |
+| `dimension_1` | The tenancy short code | `broadminster` |
 | `dimension_2` | The Globally Unique ID of the user whom the review was assigned to, can be joined to [`public.f_rl_users.talis_guid`]({{ site.baseurl }}/topics/users.html). | `myoVK7wfosXXWlw` |
 | `dimension_3` | Globally Unique ID of the review | `myoVK7wfosXXWlw` |
 | `dimension_4` | The Globally Unique ID of the user assigning the review, can be joined to [`public.f_rl_users.talis_guid`]({{ site.baseurl }}/topics/users.html). | `myoVK7wfosXXWlw` |
+
+<br/>
+<a name="user-identified"></a>
+
+### Events with class `user.identified`
+
+| Column | Description | Example |
+| --- | --- | --- |
+| `dimension_1` | The tenancy short code | `broadminster` |
+| `dimension_2` | The `talis_guid`. Can be joined to `rl_users.talis_guid`  | `myoVK7wfosXXWlw` |
+| `dimension_3` | An identifier supplied at sign in by your IDP in the SAML attributes, either from `princiapl_name`, `email` or `persistent_id` in that order of preference   | `user123@myinst.ac.uk` |
 
 <br/>
 

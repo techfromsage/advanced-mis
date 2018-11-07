@@ -23,6 +23,7 @@ a variable definition based on the class of event.
 
 
 <br/>
+<a name="list-view"></a>
 
 ### Events with class `list.view`
 
@@ -33,6 +34,7 @@ a variable definition based on the class of event.
 
 
 <br/>
+<a name="list-item-view"></a>
 
 ### Events with class `list.item.view`
 
@@ -44,6 +46,7 @@ a variable definition based on the class of event.
 
 
 <br/>
+<a name="lti-link-followed"></a>
 
 ### Events with class `lti.link.followed`
 
@@ -52,3 +55,15 @@ a variable definition based on the class of event.
 | `property_1` | Tenant code | `broadminster` |
 | `property_2` | An identifier matching the course context the LTI launch was made from. Where available, is one of `custom_canvas_course_id`, `custom_knowledge_grouping_code`, `lis_course_offering_sourcedid`, `context_id` from the LTI launch payload, in that order of preference.  | `ABF201` |
 | `property_3` | The user ID from the LTI payload, either from `lis_person_sourcedid` or `user_id` in that order of preference   | `3` |
+
+
+<br/>
+<a name="user-identified"></a>
+
+### Events with class `user.identified`
+
+| Column | Description | Example |
+| --- | --- | --- |
+| `property_1` | Tenant code | `broadminster` |
+| `property_2` | The `talis_guid`. Can be joined to `rl_users.talis_guid`  | `myoVK7wfosXXWlw` |
+| `property_3` | An identifier supplied at sign in by your IDP in the SAML attributes, either from `princiapl_name`, `email` or `persistent_id` in that order of preference   | `user123@myinst.ac.uk` |
