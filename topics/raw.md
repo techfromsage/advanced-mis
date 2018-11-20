@@ -46,6 +46,19 @@ a variable definition based on the class of event.
 
 
 <br/>
+<a name="list-item-external_link-click"></a>
+
+### Events with class `list.item.external_link.click`
+
+| Column | Description | Example |
+| --- | --- | --- |
+| `property_1` | The tenancy short code | `broadminster` |
+| `property_2` | List item's Globally Unique ID, can be joined to [`public.f_rl_items.item_guid`]({{ site.baseurl }}/topics/items.html)   | `DE53F159-8AE9-F8D4-6518-263DED7D56E9` |
+| `property_3` | A string categorising the destination category, possible values are the name of the campus bookstore vendor (e.g. `Blackwell's`), `digitisation`, `doi`, `ebook`, `google_books`, `lcn_lookup`, `library_search`, `open_url`, `other` | `ebook` |
+| `property_4` | The external link's domain name | `www.dawsonera.com` |
+
+
+<br/>
 <a name="lti-link-followed"></a>
 
 ### Events with class `lti.link.followed`
