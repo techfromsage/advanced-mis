@@ -41,9 +41,8 @@ these columns depends on the `event_class` in question and is documented in deta
 | Column | Description | Example |
 | --- | --- | --- |
 | `dimension_1` | The tenancy short code | `broadminster` |
-| `dimension_2` | List item's Globally Unique ID, can be joined to [`public.f_rl_items.item_guid`]({{ site.baseurl }}/topics/items.html)   | `DE53F159-8AE9-F8D4-6518-263DED7D56E9` |
-| `dimension_3` | A string categorising the destination category, possible values are the name of the campus bookstore vendor (e.g. `Blackwell's`), `digitisation`, `doi`, `ebook`, `google_books`, `lcn_lookup`, `library_search`, `open_url`, `other` | `ebook` |
-| `dimension_4` | The external link's domain name | `www.dawsonera.com` |
+| `dimension_2` | The new reading intention   | `CurrentlyConsuming` |
+| `dimension_3` | If applicable, the previous reading intention | `HaveConsumed` |
 
 <br/>
 <a name="login-success"></a>
@@ -197,13 +196,14 @@ these columns depends on the `event_class` in question and is documented in deta
 <br/>
 <a name="list-item-external_link-click"></a>
 
-### Events with class `annotations.readingIntention`
+### Events with class `lti.link.external_link.click`
 
 | Column | Description | Example |
 | --- | --- | --- |
 | `dimension_1` | The tenancy short code | `broadminster` |
-| `dimension_2` | The new reading intention   | `CurrentlyConsuming` |
-| `dimension_3` | If applicable, the previous reading intention | `HaveConsumed` |
+| `dimension_2` | List item's Globally Unique ID, can be joined to [`public.f_rl_items.item_guid`]({{ site.baseurl }}/topics/items.html)   | `DE53F159-8AE9-F8D4-6518-263DED7D56E9` |
+| `dimension_3` | A string categorising the destination category, possible values are the name of the campus bookstore vendor (e.g. `Blackwell's`), `digitisation`, `doi`, `ebook`, `google_books`, `lcn_lookup`, `library_search`, `open_url`, `other` | `ebook` |
+| `dimension_4` | The external link's domain name | `www.dawsonera.com` |
 
 <br/>
 <a name="lti-link-followed"></a>
