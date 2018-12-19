@@ -29,18 +29,27 @@ body_class: lists
 | `section_count` | `INTEGER` | Number of sections in this list | `23`
 | `item_count` | `INTEGER` | Number of items in this list | `170`
 | `owner` | `VARCHAR(4096)` | Timestamp of when the list was created |
+| `date_created` | `TIMESTAMP` | Date the list was created | `2016-01-12 00:00:00.0`
 | `year_created` | `INTEGER` | Year of when the list was created | `2018`
 | `month_created` | `INTEGER` | Month of when the list was created, values `1-12` | `12`
 | `week_created` | `INTEGER` | ISO 8601 week of when the list was created, note Monday is the start of the ISO 8601 week, values `1-53` | `52`
 | `dow_created` | `INTEGER` | Day of week of when the list was created, values `0-6`, Sunday is `0` | 5
+| `last_updated` | `TIMESTAMP` | Date the list was last updated | `2016-01-12 00:00:00.0`
+| `year_last_updated` | `INTEGER` | Year of when the list was last updated | `2018`
+| `month_last_updated` | `INTEGER` | Month of when the list was last updated, values `1-12` | `12`
+| `week_last_updated` | `INTEGER` | ISO 8601 week of when the list was last updated, note Monday is the start of the ISO 8601 week, values `1-53` | `52`
+| `dow_last_updated` | `INTEGER` | Day of week of when the list was last updated, values `0-6`, Sunday is `0` | 5
+| `last_published` | `TIMESTAMP` | Date the list was last published | `2016-01-12 00:00:00.0`
 | `year_last_published` | `INTEGER` | Year of when the list was last published | `2018`
 | `month_last_published` | `INTEGER` | Month of when the list was last published, values `1-12` | `12`
 | `week_last_published` | `INTEGER` | ISO 8601 week of when the list was last published, note Monday is the start of the ISO 8601 week, values `1-53` | `52`
 | `dow_last_published` | `INTEGER` | Day of week of when the list was last published, values `0-6`, Sunday is `0` | 5
+| `date_archived` | `TIMESTAMP` | Date the list was archived | `2016-01-12 00:00:00.0`
 | `year_archived` | `INTEGER` | Year of when the list was archived | `2018`
 | `month_archived` | `INTEGER` | Month of when the list was archived, values `1-12` | `12`
 | `week_archived` | `INTEGER` | ISO 8601 week of when the list was archived, note Monday is the start of the ISO 8601 week, values `1-53` | `52`
 | `dow_archived` | `INTEGER` | Day of week of when the list was archived, values `0-6`, Sunday is `0` | 5
+| `last_reviewed` | `TIMESTAMP` | Date the list was last reviewed | `2016-01-12 00:00:00.0`
 | `year_last_reviewed` | `INTEGER` | Year of when the list was last reviewed | `2018`
 | `month_last_reviewed` | `INTEGER` | Month of when the list was last reviewed, values `1-12` | `12`
 | `week_last_reviewed` | `INTEGER` | ISO 8601 week of when the list was last reviewed, note Monday is the start of the ISO 8601 week, values `1-53` | `52`

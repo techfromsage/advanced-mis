@@ -24,7 +24,7 @@ Refer to the data dictionary topics below to discover how to use the different e
 | [Lists]({{ site.baseurl }}/topics/lists.html) | Reading list data | `f_rl_lists`
 | [Items]({{ site.baseurl }}/topics/items.html) | Reading list item data | `f_rl_items`
 | [Users]({{ site.baseurl }}/topics/users.html) | Reading list user records | `f_rl_users`
-| [Hierarchy]({{ site.baseurl }}/topics/hierarchy.html) | Reading list hierarchy data | `f_rl_hierarchy`
+| [Rollovers]({{ site.baseurl }}/topics/rollovers.html) | Reading list rollover data | `f_rl_list_rollover_relationships`
 | [Digitisations]({{ site.baseurl }}/topics/digitisations.html) | Copyright cleared request data | `f_dc_requests`
 
 **WARNING:** Because this is a beta service, the data dictionary is subject to change. For that reason always refer to column names directly in your SQL statements, not column positions.

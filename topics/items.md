@@ -32,6 +32,7 @@ body_class: items
 | `digitisation_id` | `VARCHAR(255)` | ID of the digitisation request in Talis Aspire Digitised Content that this item is linked to | `22` |
 | `digitisation_status` | `VARCHAR(32)` | Status of the digitisation, e.g. `LIVE`, `EXPIRED` | `LIVE` |
 | `has_container` | `VARCHAR(255)` | The parent container GUID of the item - could be the list itself, or a section within the list. Prefixed with the type `tenantLists` or `tenantSections` to mark out type  | `tenantSections:9CBA2921-17BD-0A62-7942-421DCD8E79E6` |
+| `date_added` | `TIMESTAMP` | Date the item was added to the list | `2016-01-12 00:00:00.0`
 | `year_added` | `INTEGER` | Year of when the list was created | `2018` |
 | `month_added` | `INTEGER` | Month of when the list was created, values `1-12` | `12` |
 | `week_added` | `INTEGER` | ISO 8601 week of when the list was created, note Monday is the start of the ISO 8601 week, values `1-53` | `52` |

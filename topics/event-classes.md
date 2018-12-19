@@ -10,6 +10,7 @@ below:
 
 | Class | Description | Timeseries data? | Raw data? |
 | --- | --- | :-: | :-: |
+| `annotations.readingIntention` | A user made, or updated, a reading intention |  [<i class="yes fas fa-check-circle"><span class="sr-only">Available</span></i>](timeseries.html#reading_intention)  |  <i class="no fas fa-times-circle"><span class="sr-only">Not available</span></i>  |
 | `login.success` | A user signed into Talis via SSO |  [<i class="yes fas fa-check-circle"><span class="sr-only">Available</span></i>](timeseries.html#login-success)  |  <i class="no fas fa-times-circle"><span class="sr-only">Not available</span></i>  |
 | `bookmarkCreated` | A bookmark was created |  [<i class="yes fas fa-check-circle"><span class="sr-only">Available</span></i>](timeseries.html#bookmark-created)  |  <i class="no fas fa-times-circle"><span class="sr-only">Not available</span></i>  |
 | `addToList` | An item was added to a list |  [<i class="yes fas fa-check-circle"><span class="sr-only">Available</span></i>](timeseries.html#addToList)  |  <i class="no fas fa-times-circle"><span class="sr-only">Not available</span></i>  |
