@@ -20,8 +20,6 @@ these columns depends on the `event_class` in question and is documented in deta
 
 ### All rows
 
-### All rows
-
 | Column | Datatype | Description | Example |
 | --- | --- | --- | --- |
 | `uuid` | `VARCHAR(64)` | Unique identifier for this event aggregation | |
