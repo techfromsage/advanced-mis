@@ -194,7 +194,7 @@ these columns depends on the `event_class` in question and is documented in deta
 <br/>
 <a name="list-item-external_link-click"></a>
 
-### Events with class `lti.link.external_link.click`
+### Events with class `list.item.external_link.click`
 
 | Column | Description | Example |
 | --- | --- | --- |
