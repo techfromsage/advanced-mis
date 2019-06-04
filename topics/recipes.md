@@ -1,6 +1,6 @@
 ---
 layout: site
-title: "Recipes: Do interesting things"
+title: Recipes
 body_class: recipe
 ---
 
@@ -18,7 +18,9 @@ Below are a whole bunch of things you could try. Each recipe gives you:
 <dl>
 {% for recipe in site.recipes %}
 <dt>
-<h4><i class="fas fa-angle-right"></i> <a href="{{ recipe.url | prepend:site.baseurl  }}">{{ recipe.title }}</a> <small>{{recipe.keywords}}</small></h4> 
+<h4>
+    <i class="fas fa-angle-right"></i> <a href="{{ recipe.url | prepend:site.baseurl  }}">{{ recipe.title }}</a> 
+    <small>{{recipe.keywords}}</small></h4> 
 </dt>
 <dd>
 <p>
