@@ -16,7 +16,7 @@ Advanced MIS is currently in limited preview with selected customers and will be
 
 If you would like to join the limited preview programme, please raise a [support ticket](https://support.talis.com).
 
-### Pre-requisits
+### Prerequisites
 
 Advanced MIS requires some knowledge of SQL or [third party development tools]({{ site.baseurl }}/topics/tools.html), such as [Tableau](https://www.tableau.com). Before using Advanced MIS, you should ensure you are proficient with such technology.
 
