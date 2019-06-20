@@ -14,7 +14,31 @@ This Advanced MIS recipe looks at how you can query the Advanced MIS database to
 Here is the query we can use:
 
 ```sql
-SELECT ...
+SELECT 
+  title, 
+  url, 
+  doi, 
+  date_of_publication, 
+  issn, 
+  volume, 
+  issue, 
+  start_page
+FROM 
+  staging_data.f_rl_items
+WHERE ( 
+  doi IS NULL 
+)
+OR (
+  date_of_publication IS NULL
+  OR
+  issn IS NULL
+  OR
+  volume IS NULL
+  OR
+  issue IS NULL
+  OR
+  start_page IS NULL
+);
 ```
 
 This will give us links to items which may need further editing.
