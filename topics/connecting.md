@@ -19,7 +19,7 @@ Third party tools with specific instructions on this page are:
 * [Tableau](#tableau)
 * [Power BI](#power-bi)
 
-### [SQLWorkbenchJ](#sqlworkbenchj)
+### SQLWorkbenchJ
 
 The process for connecting to SQLWorkbenchJ will be similar for many other SQL clients, so the instructions here can be followed for those too.
 
@@ -37,7 +37,7 @@ In the next screen, you should see the workspace window. Choose **Tools > Show D
 
 ![SQLWorkbenchJ Connection Screenshot]({{ site.baseurl }}/images/topics/connecting/sqlworkbenchj-connected.jpg)
 
-### [Tableau](#tableau)
+### Tableau
 
 1. Choose "Connect to a server/Amazon Redshift"
 
@@ -53,7 +53,7 @@ In the next screen, make sure you are in the public schema. You should see a lis
 
 ![Tableau Connected Screenshot]({{ site.baseurl }}/images/topics/connecting/tableau-connected.jpg)
 
-### [Power BI](#power-bi)
+### Power BI
 
 Connecting to Power BI involves 2 components; the desktop client and the Power BI online web based service.
 
