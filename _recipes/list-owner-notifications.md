@@ -3,7 +3,7 @@ title: List Owner Notifications
 layout: site
 body_class: recipe
 keywords: reading lists, academic engagement, notifications
-description: Get some details to help build notification details to list owners
+description: Get some details to help build notification emails or contact lists for list owners
 ---
 
 ## Background
