@@ -3,7 +3,7 @@ title: Lists by number of items
 layout: site
 body_class: recipe
 keywords: reading lists, items, list analytics, list quality
-description: get information on lists and modules by the number of items or sections they contain.
+description: Get information on lists and modules by the number of items or sections they contain.
 ---
 
 ## Background
