@@ -10,7 +10,7 @@ description: get information on lists and modules by the number of items or sect
 This recipe will sort all lists at your university by the number of items they contain.  The sort of questions you might answer are:
 
 * How many lists have zero or very few items?
-* This may represent lists which need more engagement by list developers to provide useful resources for students.
+  * This may represent lists which need more engagement by list developers to provide useful resources for students.
 * Do any lists have particularly high numbers of items?
 * This may indicate lists which are over-enriched with content, and which may discourage student engagement via information overload.
 * Do particular departments or faculty have longer or shorter lists than an average length?
