@@ -14,6 +14,12 @@ Sometimes you want to find all the list owners for a set of lists so that you ca
 * Notify that their list has not been updated for some time.
 * Notify that their list has been published.
 
+## The Data
+
+Reading lists can have a list owner assigned to them. This is a user who must already exist within Talis Aspire.
+
+We'll be joining the `f_rl_lists` table to the `f_rl_users` table using the `owner_url` which is a unique reference to that user in Talis Aspire.
+
 ## The Query
 
 Here is the query
@@ -106,6 +112,7 @@ Your lists would need to have a list owner for these queries to make sense.  If 
 
 ## Things to try 
 
+### Send Scheduled Reports
 Take the output of these queries and use them to build an email in a tool that allows you to then send the email on your behalf.  Add a scheduling component to the mix and you could have a notification pipeline which looks like:
 
 * At a defined frequency (once a week, once a month, termly, etc)
@@ -114,3 +121,9 @@ Take the output of these queries and use them to build an email in a tool that a
 * Send the email output to an email service for delivery.
 
 Exactly which tools that you choose to use will vary according to those you are comfortable with. If you are interested in doing this it might be worth asking the Talis Developer Community, or [raising a support ticket](https://support.talis.com).
+
+Here are some links to ways to do this sort of thing in popular tools.
+
+* In Power BI you can [subscribe to reports](https://docs.microsoft.com/en-us/power-bi/service-report-subscribe)
+* In Tableau, you can also [scheudle and subscribe to reports](https://www.tableau.com/learn/tutorials/on-demand/understanding-schedules-and-subscriptions)
+ 
