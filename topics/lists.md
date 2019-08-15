@@ -28,7 +28,12 @@ body_class: lists
 | `time_period` | `VARCHAR(4096)` | Textual name of time period | `Autumn Term 18`
 | `section_count` | `INTEGER` | Number of sections in this list | `23`
 | `item_count` | `INTEGER` | Number of items in this list | `170`
-| `owner` | `VARCHAR(4096)` | Timestamp of when the list was created |
+| `owner` | `VARCHAR(4096)` | Name of the list owner |
+| `owner_url` | `VARCHAR(4096)` | URL of the user who owns the list. Can be joined with public.f_rl_users.profile_url |
+| `created_by` | `VARCHAR(4096)` | Name of the user who created this list |
+| `published_by` | `VARCHAR(4096)` | Name of the user who published this list |
+| `archived_by` | `VARCHAR(4096)` | Name of the user who archived this list |
+| `review_completed_by` | `VARCHAR(4096)` | Name of the user who completed the last review of this list |
 | `date_created` | `TIMESTAMP` | Date the list was created | `2016-01-12 00:00:00.0`
 | `year_created` | `INTEGER` | Year of when the list was created | `2018`
 | `month_created` | `INTEGER` | Month of when the list was created, values `1-12` | `12`
