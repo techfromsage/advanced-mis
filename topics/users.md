@@ -22,7 +22,7 @@ body_class: users
 | `first_name` | `VARCHAR(255)` | User's first name | `Abigail` |
 | `surname` | `VARCHAR(255)` | User's surname | `Baker` |
 | `name` | `VARCHAR(255)` | Canonical URL of the reading list | `Abigail Baker` |
-| `profile_url` | `VARCHAR(4096)` | Canonical URL of the user's profile  |  |
+| `profile_url` | `VARCHAR(4096)` | Canonical URL of the user's profile. Can be used to join to other tables which reference a user URL. |  |
 | `email` | `VARCHAR(4096)` | User's email address | `ab@myinst.ac.uk` |
 | `job_role` | `VARCHAR(255)` | User-selected job role | `An academic` |
 | `profile_privacy` | `VARCHAR(255)` | Whether or not user's profile can be browsed by non-admin users, permitted values are `public`, `private` | `public` |
