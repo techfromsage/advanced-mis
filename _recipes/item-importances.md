@@ -141,7 +141,7 @@ This might give us something like this which can then be processed into a chart
 
 * It may be that importances are not consistently added to items.
 * It may be that items in previous time periods did not have importances set as rigorously,  
-or that the definitions of what the importance means hve changed over time, or between departments. 
+or that the definitions of what the importance means have changed over time, or between departments. 
 
 ## Things to try 
 
