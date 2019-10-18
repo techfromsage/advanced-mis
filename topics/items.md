@@ -25,7 +25,22 @@ body_class: items
 | `item_url` | `VARCHAR(255)` | Canonical URL of the reading list item  |  |
 | `list_guid` | `VARCHAR(4096)` | Globally Unique ID for the reading list | `DE53F159-8AE9-F8D4-6518-263DED7D56E9` |
 | `item_guid` | `VARCHAR(4096)` | Globally Unique ID for the reading list item. This should be used for joining to other data | `478A70D8-C627-91EC-D681-FFE617FABDD9` |
+| `title` | `VARCHAR(255)` | Title of the item | `A short history` |
+| `chapter_article_title` | `VARCHAR(255)` | Title of the article or chapter| `In the beginning` |
+| `authors` | `VARCHAR(4096)` | Authors of the work | `Fred R. L. Bloggs` |
 | `type` | `VARCHAR(255)` | Type of the resource, limited to the [current resource types](https://support.talis.com/hc/en-us/articles/213182945-What-resource-types-are-supported-in-Talis-Aspire-Reading-Lists-) supported by Talis Aspire | `Book` |
+| `isbn10` | `VARCHAR(255)` | The ISBN 10 | `012345678X` |
+| `isbn13` | `VARCHAR(255)` | The ISBN 13 | `9780123456789` |
+| `issn` | `VARCHAR(255)` | An ISSN | `1234-5678` |
+| `eissn` | `VARCHAR(255)` | An eISSN | `1234-5678` |
+| `lcn` | `VARCHAR(255)` | The local control number. This can be linked to records in library system reports | `b1234567` |
+| `doi` | `VARCHAR(255)` | The Digital Object Identifier | `10.123/456/adoi_link` |
+| `date_of_publication` | `VARCHAR(255)` | The date of publication (this is a representation of the date as found in original MARC record) | `c2009` |
+| `issue` | `VARCHAR(255)` | The Issue Number | `22` |
+| `volume` | `VARCHAR(255)` | The Volume | `1` |
+| `edition` | `VARCHAR(255)` | The Edition | `Rev. and exp. [ed.]` |
+| `start_page` | `VARCHAR(255)` | The start page | `23` |
+| `end_page` | `VARCHAR(255)` | The end page | `45` |
 | `importance` | `VARCHAR(255)` | Importance level of the item, limited to the values configured in your tenancy | `Suggested for student purchase` |
 | `publisher` | `VARCHAR(4096)` | Publisher of the resource | `SAGE` |
 | `format` | `VARCHAR(255)` | Format of the resource | `electronic resource` |
