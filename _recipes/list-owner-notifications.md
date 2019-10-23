@@ -64,7 +64,7 @@ AND
 
 ### Only lists older than some date
 
-In this query, rather than just getting all lists, we get only the lists that have a particular time period but have not been updated since a target date. 
+In this query, rather than just getting all lists, we get only the lists that have a particular time period but have not been updated since a target date.
 
 ```redshift
 SELECT
@@ -79,14 +79,14 @@ FROM
 WHERE
     f_rl_lists.time_period = 'Year 2019/20'
 AND
-    f_rl_lists.last_updated <= '2018-09-01'::date 
+    f_rl_lists.last_updated <= '2018-09-01'::date
 AND
     f_rl_lists.owner_url = f_rl_users.profile_url
 ```
 
 ### All lists published but with unpublished changes since some date
 
-In this query we first limit to things which have been updated since a target date but which have a status of published with changes.  They might need reminding that their lists need publishing if they are happy with their changes! 
+In this query we first limit to things which have been updated since a target date but which have a status of published with changes.  They might need reminding that their lists need publishing if they are happy with their changes!
 
 ```redshift
 SELECT
@@ -101,7 +101,7 @@ FROM
 WHERE
     f_rl_lists.status = 'Published with changes'
 AND
-    f_rl_lists.last_updated >= '2018-09-01'::date 
+    f_rl_lists.last_updated >= '2018-09-01'::date
 AND
     f_rl_lists.owner_url = f_rl_users.profile_url
 ```
@@ -110,7 +110,7 @@ AND
 
 Your lists would need to have a list owner for these queries to make sense.  If you are in the habit of having list owners who are not academic staff, then this may not be an approach that makes so much sense!
 
-## Things to try 
+## Things to try
 
 ### Send Scheduled Reports
 Take the output of these queries and use them to build an email in a tool that allows you to then send the email on your behalf.  Add a scheduling component to the mix and you could have a notification pipeline which looks like:
@@ -125,5 +125,4 @@ Exactly which tools that you choose to use will vary according to those you are 
 Here are some links to ways to do this sort of thing in popular tools.
 
 * In Power BI you can [subscribe to reports](https://docs.microsoft.com/en-us/power-bi/service-report-subscribe)
-* In Tableau, you can also [scheudle and subscribe to reports](https://www.tableau.com/learn/tutorials/on-demand/understanding-schedules-and-subscriptions)
- 
+* In Tableau, you can also [schedule and subscribe to reports](https://www.tableau.com/learn/tutorials/on-demand/understanding-schedules-and-subscriptions)

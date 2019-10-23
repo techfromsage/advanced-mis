@@ -21,7 +21,7 @@ Inside the warehouse, data exists in three forms:
 2. [Timeseries]({{ site.baseurl }}/topics/timeseries.html) 1hr sliding window aggregate - a single record per hour for a class of events, grouped by up to 4 pre-defined dimensions
 3. [Timeseries]({{ site.baseurl }}/topics/timeseries.html) 24hr sliding window aggregate - a single record per 24hr for a class of events, grouped by up to 4 pre-defined dimensions
 
-Due to the nature of event data, there is the potential over time for events to fill your warehouse to it's [size limit]({{ site.baseurl}}/topics/limits.html).
+Due to the nature of event data, there is the potential over time for events to fill your warehouse to its [size limit]({{ site.baseurl}}/topics/limits.html).
 Therefore event data is subject to a retention period before being dropped, as follows:
 
 * Raw event data is kept for up to 7 days, giving you enough time to export it on a nightly basis if required

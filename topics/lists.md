@@ -22,7 +22,7 @@ body_class: lists
 | `url` | `VARCHAR(4096)` | Canonical URL of the reading list |
 | `list_guid` | `VARCHAR(4096)` | Globally Unique ID for the reading list. This should be used for joining to other data. | `DE53F159-8AE9-F8D4-6518-263DED7D56E9` |
 | `title` | `VARCHAR(4096)` | Reading list title |
-| `status` | `VARCHAR(255)` | Permitted values `Draft`, `Published`, `Puiblished with Unpublished Changes` | `Draft`
+| `status` | `VARCHAR(255)` | Permitted values `Draft`, `Published`, `Published with Unpublished Changes` | `Draft`
 | `hierarchy_url` | `VARCHAR(4096)` | Canonical URL of hierarchy record, can be used to link to [hierarchy]({{ site.baseurl }}/topics/hierarchy.html) |
 | `time_period` | `VARCHAR(4096)` | Textual name of time period | `Autumn Term 18`
 | `section_count` | `INTEGER` | Number of sections in this list | `23`

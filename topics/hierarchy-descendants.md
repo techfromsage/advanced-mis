@@ -9,7 +9,7 @@ body_class: hierarchy-descendants
   <dd>Hierarchy</dd>
 
   <dt>Description</dt>
-  <dd>A mapping between a hierarchy node and it's eventual descendants</dd>
+  <dd>A mapping between a hierarchy node and its eventual descendants</dd>
 
   <dt>Database location</dt>
   <dd><code>public.f_rl_hierarchy</code></dd>

@@ -35,7 +35,7 @@ bundle exec jekyll serve
 
 Now go to http://127.0.0.1:4000
 
-If your running on a VM, start jekyll with the command
+If you're running on a VM, start jekyll with the command
 
 ```
 bundle exec jekyll serve --host 0.0.0.0
