@@ -22,7 +22,7 @@ body_class: hierarchy
 | `code` | `VARCHAR(255)` | Code of the hierarchy node. Note only unique when combined with type | `ABF203` |
 | `url` | `VARCHAR(4096)` |  Canonical URL of the hierarchy node | |
 | `type` | `VARCHAR(64)` | Type of the hierarchy node | `Course` |
-| `name` | `VARCHAR(4096)` | Name of the heirarchy node  | `Introduction to Financial Accounting and Reporting` |
+| `name` | `VARCHAR(4096)` | Name of the hierarchy node  | `Introduction to Financial Accounting and Reporting` |
 | `jacs_code` | `VARCHAR(255)` | If present, the mapping JACS code for the node | `N300` |
 | `parent_code` | `VARCHAR(255)` | The code of any immediate parent node | `BUSMAN` |
 | `parent_url` | `VARCHAR(4096)` | Canonical URL of the immediate parent node | |

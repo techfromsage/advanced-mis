@@ -9,7 +9,7 @@ body_class: rollovers
   <dd>Rollovers</dd>
 
   <dt>Description</dt>
-  <dd>Describes the relationship between a list and it's rollover copies</dd>
+  <dd>Describes the relationship between a list and its rollover copies</dd>
 
   <dt>Database location</dt>
   <dd><code>public.f_rl_list_rollover_relationships</code></dd>

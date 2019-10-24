@@ -6,11 +6,11 @@ keywords: reading lists, Item Importances
 description: Explore how importances are used in your reading lists.
 ---
 
-## Background 
+## Background
 
 Items on lists can be given a level of importance. This is used to indicate to students that they may wish to pay more or less attention to certain works.
 
-Libraries often use the item importance in their purchase decision making processes and so want to track items which have importances and those that don't 
+Libraries often use the item importance in their purchase decision making processes and so want to track items which have importances and those that don't
 
 ### Questions you might be asking
 
@@ -18,7 +18,7 @@ Libraries often use the item importance in their purchase decision making proces
 * Which departments are not using importances?
 * Do _Essential Reading_ items get more views than _Further Reading_ items?
 * When we are reviewing lists is it worth paying attention to items marked as _Background Reading_?
-* Are academic's flagging everything as _Essential_?
+* Are academics flagging everything as _Essential_?
 
 ## Events
 
@@ -31,7 +31,7 @@ Here are a couple of queries to see how far back event data is available:
 ```redshift
 -- data available since:
 select min(time_window) from f_event_timeseries_24hr;
- 
+
 -- data available since for specific event:
 select min(time_window) from f_event_timeseries_24hr
 WHERE event_class = 'list.item.external_link.click';
@@ -45,21 +45,21 @@ We start with a simple query to find out how many items do not have an importanc
 
 ```redshift
 -- count the items
-select count(item_guid) 
-from f_rl_items 
+select count(item_guid)
+from f_rl_items
 where importance = '';
 
 -- which items are they?
-select item_url 
-from f_rl_items 
+select item_url
+from f_rl_items
 where importance = '';
 ```
 
 We could then look to see how many items there are for each importance type:
 
 ```redshift
-select importance, count(importance) 
-from f_rl_items 
+select importance, count(importance)
+from f_rl_items
 group by importance;
 ```
 Which gives something like
@@ -73,40 +73,40 @@ Which gives something like
 <tr><td>Optional</td><td>1981</td></tr>
 </table>
 
-## Linking importances to the hierarchy 
+## Linking importances to the hierarchy
 
 We need to know that lists are linked to the hierarchy, and items are linked to lists.
-We need to also know about the hierarchy, for example that there are schools or departments which have modules, 
+We need to also know about the hierarchy, for example that there are schools or departments which have modules,
 and it is these modules which are linked to lists
 
 ```redshift
 select
        hierarchy.url,
-       items.importance, 
+       items.importance,
        count(items.importance)
-from 
+from
      f_rl_items items,
      f_rl_hierarchy_descendants hierarchy,
      f_rl_lists lists
-where 
+where
       -- join lists to the hierarchy
       lists.hierarchy_url = hierarchy.url
-  and 
+  and
       -- join lists to their items
       lists.list_guid = items.list_guid
-  and 
+  and
       -- look for only nodes in the hierarchy that have a descendant of type 'Module'
-      hierarchy.descendant_url 
+      hierarchy.descendant_url
           in (
               select url
-              from f_rl_hierarchy 
+              from f_rl_hierarchy
               where type = 'Module'
               )
-group by 
-         hierarchy.url, 
+group by
+         hierarchy.url,
          items.importance
-order by 
-         hierarchy.url, 
+order by
+         hierarchy.url,
          items.importance
 ;
 ```
@@ -140,10 +140,9 @@ This might give us something like this which can then be processed into a chart
 ## Assumptions and limitations
 
 * It may be that importances are not consistently added to items.
-* It may be that items in previous time periods did not have importances set as rigorously,  
-or that the definitions of what the importance means have changed over time, or between departments. 
+* It may be that items in previous time periods did not have importances set as rigorously,
+or that the definitions of what the importance means have changed over time, or between departments.
 
-## Things to try 
+## Things to try
 
 You could also now link in the `f_event_timeseries_24hr` table, looking for `list.item.view` events linked to the items that have importances.
-
