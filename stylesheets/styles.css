@@ -432,3 +432,11 @@ i.yes {
 i.no {
   color: #A02F2B;
 }
+
+.deprecated {
+  background-color: red;
+  border: 2px solid red;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+}

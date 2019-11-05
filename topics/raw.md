@@ -23,6 +23,17 @@ a variable definition based on the class of event.
 
 
 <br/>
+<a name="list-entry_point"></a>
+
+### Events with class `list.entry_point`
+
+| Column | Description | Examples |
+| --- | --- | --- |
+| `property_1` | The list's Globally Unique ID, namespaced by the tenancy short code | `broadminster:DE53F159-8AE9-F8D4-6518-263DED7D56E9` | 
+| `property_2` | The user's entry point to the list - could be a item, section or the whole list. The ID of the entry point is namespaced with `item`, `section` or `list` |  `list:DE53F159-8AE9-F8D4-6518-263DED7D56E9`<br/> or <br/>`item:FA53F159-1DG9-G2D4-7812-163AED7D56R9`<br/> or <br/>`section:AA93F159-1AG9-A2D8-7812-163AED7A58A1` |
+| `property_3` | The user's mode (either `view`, `view_draft`, `edit` or `view_as_student`, the latter being an editor viewing the list as a student) combined with the launch method (either `direct` or `lti`) | `view:lti` |
+
+<br/>
 <a name="list-view"></a>
 
 ### Events with class `list.view`
