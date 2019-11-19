@@ -8,17 +8,17 @@ body_class: home
 
 Advanced Management Information System (Advanced MIS) is a feature available to [Talis Aspire](https://www.talis.com) Unlimited subscribers.
 
-It provides an SQL-compatible data warehouse which includes your Talis Aspire data, plus feeds of user events, allowing you to build reports, dashboard and other custom MIS components.
+It provides an SQL-compatible data warehouse which includes your Talis Aspire application data, plus feeds of user events, allowing you to build reports, dashboards and other custom MIS components.
 
-In addition to the Talis data, you can add your own data to the warehouse, up to an overall [limit]({{ site.baseurl }}/topics/limits.html).
+In addition to data from Talis products, you can add your own data to the warehouse. For example, storing mapping data to help you join this dataset with other datasets, or store the results of queries for later comparison. 
 
-Advanced MIS is currently in limited preview with selected customers and will be rolling out to others in due course.
+While there are some [limits]({{ site.baseurl }}/topics/limits.html) these are generous and practical, and shouldn't hamper what you are trying to do. Talis can always advise on ways to approach different storage needs, or strategies for pulling data into other systems.
 
-If you would like to join the limited preview programme, please raise a [support ticket](https://support.talis.com).
+If you would like to find out more about getting access to Advanced MIS, please raise a [support ticket](https://support.talis.com).
 
 ### Prerequisites
 
-Advanced MIS requires some knowledge of SQL or [third party development tools]({{ site.baseurl }}/topics/tools.html), such as [Tableau](https://www.tableau.com). Before using Advanced MIS, you should ensure you are proficient with such technology.
+Advanced MIS requires some knowledge of SQL or [third party development tools]({{ site.baseurl }}/topics/tools.html), such as Microsoft Power BI or Tableau.
 
 
 

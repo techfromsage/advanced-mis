@@ -172,6 +172,7 @@ these columns depends on the `event_class` in question and is documented in deta
 <a name="list-entry_point"></a>
 
 ### Events with class `list.entry_point`
+Only available when using new list view and new list edit from November 2019 onwards
 
 | Column | Description | Examples |
 | --- | --- | --- |
@@ -198,6 +199,8 @@ these columns depends on the `event_class` in question and is documented in deta
 
 ### Events with class `list.item.click`
 
+Only available when using new list view and new list edit from November 2019 onwards
+
 | Column | Description | Examples |
 | --- | --- | --- |
 | `dimension_1` | The list's Globally Unique ID, namespaced by the tenancy short code | `broadminster:DE53F159-8AE9-F8D4-6518-263DED7D56E9` | 
@@ -210,7 +213,7 @@ these columns depends on the `event_class` in question and is documented in deta
 
 ### Events with class `list.item.view`
 
-<span class="deprecated">DEPRECATED</span> instead, see `list.entry_point`
+<span class="deprecated">DEPRECATED</span> instead, see `list.item.click`
 
 | Column | Description | Example |
 | --- | --- | --- |
@@ -287,7 +290,7 @@ these columns depends on the `event_class` in question and is documented in deta
 | --- | --- | --- |
 | `dimension_1` | The tenancy short code | `broadminster` |
 | `dimension_2` | The `talis_guid`. Can be joined to `rl_users.talis_guid`  | `myoVK7wfosXXWlw` |
-| `dimension_3` | An identifier supplied at sign in by your IDP in the SAML attributes, either from `princiapl_name`, `email` or `persistent_id` in that order of preference   | `user123@myinst.ac.uk` |
+| `dimension_3` | An identifier supplied at sign in by your IDP in the SAML attributes, either from `principal_name`, `email` or `persistent_id` in that order of preference   | `user123@myinst.ac.uk` |
 
 <br/>
 
