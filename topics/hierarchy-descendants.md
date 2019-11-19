@@ -12,7 +12,7 @@ body_class: hierarchy-descendants
   <dd>A mapping between a hierarchy node and its eventual descendants</dd>
 
   <dt>Database location</dt>
-  <dd><code>public.f_rl_hierarchy</code></dd>
+  <dd><code>public.f_rl_hierarchy_descendants</code></dd>
 </dl>
 
 This view is useful for comprising rollups of hierarchy data between levels. For a given starting
