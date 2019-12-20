@@ -6,6 +6,29 @@ body_class: connecting
 
 This article explains how to connect to various third party tools you might use to query Advanced MIS.
 
+### Before you can connect
+
+Before you can connect to your Advanced MIS data warehouse, you will need to supply Talis with information about which users should be allowed access.  Talis will need the following information:
+
+* User's name
+* User's email address
+* External IP Address or IP Address range (described below)
+
+#### IP Addresses
+
+We need an __externally visible__ IP Address or a range of IP Addresses for each user. We will use this information to add the user's IP Address to a firewall which restricts access to the Advanced MIS Data Warehouse to only those who should have access and reduces the chance of security issues.
+
+User workstations will need to either have a statically assigned IP Address, or be part of a known subnet range which is ideally __not__ a range that covers every IP Address in the whole uni.
+
+Typically University IT departments can do one of the following:
+
+* Use DHCP to statically lease an IP address to a known workstation (usually using the MAC address of the network interface). If the device is a laptop and may have both wired and wireless network cards, then multiple statically leased IP addresses may be required.
+* Lease a known range of IP Addresses to a range of workstations. For example, this might be "all library staff PCs" or "all PCs sited in the administration office" It is up to University network teams to determine what is the most sensible way to achieve this.
+
+__IMPORTANT__ the IP address must be an IP Address that will been seen by Talis in the outbound connection from the University network to the Talis Aspire Advanced MIS data warehouse. Internally assigned private network IP addresses will not suffice. For example, these ranges (shown as CIDR block with subnet mask) are not suitable: `10.0.0.0/8 (255.0.0.0)` or `172.16.0.0/12 (255.240.0.0)` or `192.168.0.0/16 (255.255.0.0)`.
+
+### Basic connections
+
 You will need four bits of information in all cases, these will be supplied to you by Talis when Advanced MIS is activated:
 
 1. Server domain name
