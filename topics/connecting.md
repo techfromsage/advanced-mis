@@ -18,7 +18,7 @@ Before you can connect to your Advanced MIS data warehouse, you will need to sup
 
 We need an __externally visible__ IP Address or a range of IP Addresses for each user. We will use this information to add the user's IP Address to a firewall which restricts access to the Advanced MIS Data Warehouse to only those who should have access and reduces the chance of security issues.
 
-User workstations will need to either have a statically assigned IP Address, or be part of a known subnet range which is ideally NOT a range that covers every IP Address in the whole uni.
+User workstations will need to either have a statically assigned IP Address, or be part of a known subnet range which is ideally __not__ a range that covers every IP Address in the whole uni.
 
 Typically University IT departments can do one of the following:
 
