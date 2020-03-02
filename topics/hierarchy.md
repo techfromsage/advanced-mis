@@ -24,8 +24,8 @@ body_class: hierarchy
 | `type` | `VARCHAR(64)` | Type of the hierarchy node | `Course` |
 | `name` | `VARCHAR(4096)` | Name of the hierarchy node  | `Introduction to Financial Accounting and Reporting` |
 | `jacs_code` | `VARCHAR(255)` | If present, the mapping JACS code for the node | `N300` |
-| `parent_code` | `VARCHAR(255)` | The code of any immediate parent node | `BUSMAN` |
-| `parent_url` | `VARCHAR(4096)` | Canonical URL of the immediate parent node | |
+| `parent_code` | `VARCHAR(255)` | The code of any immediate parent node. May contain multiple values separated by semi-colon and space `'; '` | `BUSMAN` |
+| `parent_url` | `VARCHAR(4096)` | Canonical URL of the immediate parent node. May contain multiple values separated by semi-colon and space `'; '` | |
 | `total_list_count` | `INTEGER` | Sum of any published or draft lists attached to this hierarchy node | `3` |
 | `published_list_count` | `INTEGER` | Number of any published (or published with unpublished changes) lists attached to this hierarchy node | `2` |
 | `draft_list_count` | `INTEGER` | Number of any draft only lists attached to this hierarchy node | `1` |

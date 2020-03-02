@@ -6,7 +6,7 @@ body_class: hierarchy-descendants
 
 <dl>
   <dt>Entity</dt>
-  <dd>Hierarchy</dd>
+  <dd>Hierarchy Descendants</dd>
 
   <dt>Description</dt>
   <dd>A mapping between a hierarchy node and its eventual descendants</dd>
