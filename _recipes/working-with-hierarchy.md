@@ -9,14 +9,14 @@ description: Explore how you can query up or down the hierarchy.
 ## Background
 When reporting any kind of activity, the first and most obvious way to group data for summary is by the school, department or faculty that is responsible for the creation and maintenance of a list in the University.
 
-The Hierarchy in Talis Aspire is 'free form' in that you can have as many hierarchy levels as you like, and the type of 'node' in each level is entirely up to you to choose from a set list of types.  This means that each university can use its own terminology for how it describes a cluster of teaching blocks and the organisational group responsible for maintaining them.
+The Hierarchy in Talis Aspire is 'free form' in that you can have as many hierarchy levels as you like, and the type of 'node' in each level is for you to choose from a set list of types.  Each university can use its own terminology for how it describes a cluster of teaching blocks and the organisational group responsible for maintaining them.
 
 In this example we we will use the following hierarchy nomenclature:
 
 - A `node` is any point in the hierarchy.
 - A `module` is a node with a type of 'module'
-- A `department` is an organisation group within the university which has responsibility for delivering the teaching for the modules
-- An `Institution` is the top level of the hierarchy.   
+- A `department` is an organisation group within the university which has responsibility for delivering the teaching for the modules. It is a node with a type of 'department'
+- An `institution` is often the top level of the hierarchy. It is a predefined node with the type of 'institution' and the code 'INSTITUTION'.   
 
 ### Questions you might be asking
 
@@ -34,7 +34,7 @@ The questions people want to help answer in these reports are often as follows:
 
 In Talis Aspire, because the hierarchy is designed to be flexible to many different ways of describing an institution, there are some key things to consider when querying the hierarchy.  
 
-In the `f_rl_hierarchy` view you will see a flat representation of what is actually a one to many relationship between a node and it's parents.  For example where a node of type module, has more than one parent, then each parent is included in the parents columns separated by a semi-colon and space (`; `).
+In the `f_rl_hierarchy` view you will see a flat representation of what is actually a one-to-many relationship between a node and its parents.  For example where a node of type module, has more than one parent, then each parent is included in the parents columns separated by a semi-colon and space (`; `).
 
 You can check to see if this is likely to affect your data using a query like the following:
 
@@ -113,4 +113,4 @@ group by
 
 The main thing to remember is that the hierarchy descendants views are pre-calculated to 5 levels of hierarchy. This means that where a node is a child of two different parents it will appear twice in any count, once for each parent.  Often this is what you want... but not always!
 
-The maximum number of __parents__ a node can have is 100. The number of __children__ a node can have is unlimited. If this reasonable default causes you any issues in querying the table, do let us know through our support channels.
+The maximum number of __parents__ that the `f_rl_hierarchy_parents` view can show for any given node is 100. In Talis Aspire there is no enforced limit. The number of __children__ a node can have is unlimited. If this reasonable default causes you any issues in querying the table, do let us know through our support channels.
