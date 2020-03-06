@@ -32,5 +32,6 @@ below:
 | `reviews.actions.setOutcome.1` | An acquisitions review outcome was set |  [<i class="yes fas fa-check-circle"><span class="sr-only">Available</span></i>](timeseries.html#reviews-actions-setOutcome-1)  |  <i class="no fas fa-times-circle"><span class="sr-only">Not available</span></i>  |
 | `reviews.actions.assignUser.1` | An acquisitions review was assigned to a user |  [<i class="yes fas fa-check-circle"><span class="sr-only">Available</span></i>](timeseries.html#reviews-actions-assignUser-1)  |  <i class="no fas fa-times-circle"><span class="sr-only">Not available</span></i>  |
 | `user.identified` &#10033; | Following sign in (`login.success`) this event is fired and matches up the institution's identity with the talis user's profile |  [<i class="yes fas fa-check-circle"><span class="sr-only">Available</span></i>](timeseries.html#user-identified)  | [<i class="yes fas fa-check-circle"><span class="sr-only">Available</span></i>](raw.html#user-identified)  |
+| `resource.edit` | A resource was updated by a user |  [<i class="yes fas fa-check-circle"><span class="sr-only">Available</span></i>](timeseries.html#resource-edit)  | <i class="no fas fa-times-circle"><span class="sr-only">Not available</span></i> |
 
 &#10033; These events are only available when using [New List View](https://support.talis.com/hc/en-us/articles/360000008189).
