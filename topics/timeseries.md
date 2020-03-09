@@ -295,7 +295,7 @@ Only available when using new list view and new list edit from November 2019 onw
 <br/>
 <a name="resource-edit"></a>
 
-### Events with class `resoure.edit`
+### Events with class `resource.edit`
 
 | Column | Description | Example |
 | --- | --- | --- |
