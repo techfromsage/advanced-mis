@@ -293,4 +293,13 @@ Only available when using new list view and new list edit from November 2019 onw
 | `dimension_3` | An identifier supplied at sign in by your IDP in the SAML attributes, either from `principal_name`, `email` or `persistent_id` in that order of preference   | `user123@myinst.ac.uk` |
 
 <br/>
+<a name="resource-edit"></a>
 
+### Events with class `resoure.edit`
+
+| Column | Description | Example |
+| --- | --- | --- |
+| `dimension_1` | The tenancy short code | `broadminster` |
+| `dimension_2` | Globally Unique ID of the resource | `B6B74633-45D0-6787-5F99-7A9E03DB9182` |
+| `dimension_3` | Edit context of the action, possible values are (`my_bookmarks`, `item_view`, `list_edit`, `reviews`) | `list_edit` |
+| `dimension_4` | User's Globally Unique ID, can be joined to [`public.f_rl_users.talis_guid`]({{ site.baseurl }}/topics/users.html). | `myoVK7wfosXXWlw` |
