@@ -38,9 +38,20 @@ You will need four bits of information in all cases, these will be supplied to y
 
 Third party tools with specific instructions on this page are:
 
+* [ODBC](#odbc)
 * [SQLWorkbenchJ](#sqlworkbenchj)
 * [Tableau](#tableau)
 * [Power BI](#power-bi)
+
+### ODBC
+
+ODBC is a generic database driver framework which can be a handy way to connect to many different types of database.
+
+* __Windows__: To make an ODBC connection available on your Windows machine, [follow these instructions for Windows Amazon Redshift ODBC installation and configuration](https://docs.aws.amazon.com/redshift/latest/mgmt/install-odbc-driver-windows.html).
+* __Mac OSX__: To make an ODBC connection available on your MAC, [follow these instruction for Mac Amazon Redshift ODBC installation and configuration](https://docs.aws.amazon.com/redshift/latest/mgmt/install-odbc-driver-mac.html)
+* __Linux__:   To make an ODBC connection available on your Linux machine, [follow these instructions for Linux Amazon Redshift ODBC installation and configuration](https://docs.aws.amazon.com/redshift/latest/mgmt/install-odbc-driver-linux.html)
+
+You will then be able to use your username and password to connect from any ODBC compatible client.
 
 ### SQLWorkbenchJ
 
@@ -94,7 +105,15 @@ You will have the option to create a connection as a Direct Query or Import conn
 * Import — Use this option if you plan to publish dataset to the Power Bi Online Service. This is the default and Microsoft recommended way to connect in Power BI as it uses the underlying Power BI data engine.
 * Direct Query — Use this option if you want to get live data on the desktop client only, or if you have an on premise Power BI gateway setup (see below). [Read more about Direct Query](https://docs.microsoft.com/en-us/power-bi/desktop-use-directquery).
 
-Microsoft details [how to connect to a Redshift source](https://docs.microsoft.com/en-us/power-bi/desktop-connect-redshift).
+##### Native Power BI
+Microsoft details [how to connect to a Redshift source](https://docs.microsoft.com/en-us/power-bi/desktop-connect-redshift). This info uses the default Power BI Redshift connector and does NOT support customer queries.
+
+##### Using ODBC Driver
+You can also use an ODBC connection if you want to be able to run arbitrary SQL queries against your Advanced MIS database.
+To make an ODBC connection available on your Windows machine, [follow these instructions](https://docs.aws.amazon.com/redshift/latest/mgmt/install-odbc-driver-windows.html).
+You will then be able to select ODBC as the data source in Power BI.  In the Advanced options you can enter the SQL query that you wish to run. 
+
+These kind of connections will always be 'import' queries and data will need to be refreshed using the Power BI Desktop client.
 
 #### Power BI Service
 
@@ -104,3 +123,5 @@ If you plan to publish reports using the Power BI service, please either:
 
 * Use the Import connection type.
 * Setup a local [on premise Power BI gateway](https://docs.microsoft.com/en-us/power-bi/service-gateway-onprem) to proxy the redshift connection. You can tell us what the IP of your on premise gateway is and we will allow connections from that IP address.  This has been supported in Power BI gateway since the [May 2019 release of the gateway](https://powerbi.microsoft.com/en-us/blog/on-premises-data-gateway-may-2019-update-is-now-available/). 
+
+
