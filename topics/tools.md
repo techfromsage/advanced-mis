@@ -7,7 +7,7 @@ body_class: tools
 This article explains what a third party tool is, how to select them and how they are supported.
 
 Third party tools are used to query and format information from Advanced MIS. Some tools are more low
-level than others, such as low-level SQL Clients (e.g. [SQLWorkbenchJ](https://www.sql-workbench.eu/)) and require SQL programming knowledge to
+level than others, such as low-level SQL Clients (e.g. [TablePlus](https://www.tableplus.io/)) and require SQL programming knowledge to
 operate.
 
 Others, such as reporting tools (e.g. [Tableau](https://www.tableau.com)) are much more high-level with intuitive point and click

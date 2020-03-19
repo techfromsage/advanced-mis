@@ -38,10 +38,25 @@ You will need four bits of information in all cases, these will be supplied to y
 
 Third party tools with specific instructions on this page are:
 
+__SQL Tools__
+
+* [TablePlus](#tableplus)
 * [ODBC](#odbc)
 * [SQLWorkbenchJ](#sqlworkbenchj)
+
+__Business Intelligence Tools__
+
 * [Tableau](#tableau)
 * [Power BI](#power-bi)
+
+Once you have connected, take a look at our [recipes]({{ site.baseurl }}/topics/recipes.html) and copy-paste some of the examples to start exploring. 
+
+### TablePlus
+
+For Mac OSX and Windows, this simple tool is really handy for exploring the data available in the tables, and writing and testing SQL queries.
+Connection is straight forward, simply select 'redshift' as the connection type and fill in the requested fields. The docs on their website are very clearly written, and you should have no trouble getting started. 
+
+[https://tableplus.com/](https://tableplus.com/)
 
 ### ODBC
 
