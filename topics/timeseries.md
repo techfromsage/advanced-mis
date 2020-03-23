@@ -8,12 +8,24 @@ Timeseries data differs from the [raw]({{site.baseurl}}/topics/raw.html) data in
 by a number of dimensions and then rolled up into a sliding window. This compresses the amount of data
 significantly, which is useful for dashboarding and trend analysis.
 
-There are two different tables representing the two sliding window lengths:
+There are several different views representing different sliding window lengths and history:
 
-1. `f_event_timeseries_1hr` where the event counts and sums are per hour
-1. `f_event_timeseries_24hr` where the event counts and sums are per day
+1. `f_event_timeseries_1hr` 
+    - where the event counts and sums are per hour
+1. `f_event_timeseries_24hr` 
+    - where the event counts and sums are per day. 
+    - up to 36 months historical data
+1. `f_event_timeseries_24hr_last_3_months`
+    - where the event counts and sums are per day
+    - up to 3 months historical data
+1. `f_event_timeseries_24hr_last_6_months`
+    - where the event counts and sums are per day
+    - up to 6 months historical data
+1. `f_event_timeseries_24hr_last_12_months` 
+    - where the event counts and sums are per day
+    - up to 12 months historical data
 
-Each sliding window has its own data retention policy [which is documented here]({{site.baseurl}}/topics/limits.html).
+Each sliding window has its own data retention policy [which is documented here]({{site.baseurl}}/topics/limits.html). Data ages out on a daily basis, so 3 months ago is 90 days from today's date.
 
 Both tables share a common schema, with up to four `dimension_*` columns available. The definition of
 these columns depends on the `event_class` in question and is documented in detail below.
