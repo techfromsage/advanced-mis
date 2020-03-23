@@ -315,3 +315,51 @@ Only available when using new list view and new list edit from November 2019 onw
 | `dimension_2` | Globally Unique ID of the resource | `B6B74633-45D0-6787-5F99-7A9E03DB9182` |
 | `dimension_3` | Edit context of the action, possible values are (`my_bookmarks`, `item_view`, `list_edit`, `reviews`) | `list_edit` |
 | `dimension_4` | User's Globally Unique ID, can be joined to [`public.f_rl_users.talis_guid`]({{ site.baseurl }}/topics/users.html). | `myoVK7wfosXXWlw` |
+
+<br/>
+<a name="digitisation-view"></a>
+
+### Events with class `digitisation.view`
+
+| Column | Description | Example |
+| --- | --- | --- |
+| `dimension_1` | The tenancy short code | `broadminster` | 
+| `dimension_2` | The request id. Can be used to join to the `f_dc_requests` view. | `1673`
+| `dimension_3` | not used | |
+| `dimension_4` | not used | |
+
+<br/>
+<a name="digitisation-print-showmodal"></a>
+
+### Events with class `digitisation.print.showModal`
+
+| Column | Description | Example |
+| --- | --- | --- |
+| `dimension_1` | The tenancy short code | `broadminster` | 
+| `dimension_2` | The request id. Can be used to join to the `f_dc_requests` view. | `1673`
+| `dimension_3` | not used | |
+| `dimension_4` | not used | |
+
+<br/>
+<a name="digitisation-print"></a>
+
+### Events with class `digitisation.print`
+
+| Column | Description | Example |
+| --- | --- | --- |
+| `dimension_1` | The tenancy short code | `broadminster` | 
+| `dimension_2` | The request id. Can be used to join to the `f_dc_requests` view. | `1673`
+| `dimension_3` | not used | |
+| `dimension_4` | not used | |
+
+<br/>
+<a name="digitisation-download"></a>
+
+### Events with class `digitisation.download`
+
+| Column | Description | Example |
+| --- | --- | --- |
+| `dimension_1` | The tenancy short code | `broadminster` | 
+| `dimension_2` | The request id. Can be used to join to the `f_dc_requests` view. | `1673`
+| `dimension_3` | not used | |
+| `dimension_4` | not used | |
