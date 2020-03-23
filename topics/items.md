@@ -53,4 +53,4 @@ body_class: items
 | `week_added` | `INTEGER` | ISO 8601 week of when the list was created, note Monday is the start of the ISO 8601 week, values `1-53` | `52` |
 | `dow_added` | `INTEGER` | Day of week of when the list was created, values `0-6`, Sunday is `0` | `5` |
 
-**WARNING:** Because this is a beta service, the data dictionary is subject to change. For that reason always refer to column names directly in your SQL statements, not column positions.
+**WARNING:** The data dictionary is subject to change. For that reason always refer to column names directly in your SQL statements, not column positions.

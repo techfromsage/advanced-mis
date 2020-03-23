@@ -39,4 +39,4 @@ and that this view only supports up to five levels of depth:
 | `url` | `VARCHAR(4096)` | Canonical URL of the hierarchy node |  |
 | `descendant_url` | `VARCHAR(4096)` | Canonical URL of the descendant node  |  |
 
-**WARNING:** Because this is a beta service, the data dictionary is subject to change. For that reason always refer to column names directly in your SQL statements, not column positions.
+**WARNING:** The data dictionary is subject to change. For that reason always refer to column names directly in your SQL statements, not column positions.

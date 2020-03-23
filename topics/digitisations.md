@@ -41,4 +41,4 @@ body_class: digitisations
 | `rl_item_url` | `VARCHAR(255)` | If the item is linked to a reading list item, the canonical URL of that item |  |
 | `item_guid` | `VARCHAR(255)` | The guid of the reading list item, to be used for joining data | `478A70D8-C627-91EC-D681-FFE617FABDD9` |
 
-**WARNING:** Because this is a beta service, the data dictionary is subject to change. For that reason always refer to column names directly in your SQL statements, not column positions.
+**WARNING:** The data dictionary is subject to change. For that reason always refer to column names directly in your SQL statements, not column positions.

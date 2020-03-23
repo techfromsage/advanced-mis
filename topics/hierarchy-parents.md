@@ -28,4 +28,4 @@ A parent in this view is the immediate parent of the node in the `url` column, a
 | `url` | `VARCHAR(4096)` | Canonical URL of the hierarchy node |  |
 | `parent_url` | `VARCHAR(4096)` | Canonical URL of the parent node  |  |
 
-**WARNING:** Because this is a beta service, the data dictionary is subject to change. For that reason always refer to column names directly in your SQL statements, not column positions.
+**WARNING:** The data dictionary is subject to change. For that reason always refer to column names directly in your SQL statements, not column positions.
