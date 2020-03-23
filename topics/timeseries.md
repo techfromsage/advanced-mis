@@ -197,6 +197,28 @@ This event is emitted when a list is published.
 | `dimension_4` | User's Globally Unique ID, can be joined to [`public.f_rl_users.talis_guid`]({{ site.baseurl }}/topics/users.html). | `myoVK7wfosXXWlw` |
 
 <br/>
+<a name="player-profile-complete"></a>
+
+### Events with class `player.profile.complete`
+
+`digitisation.download` is also recorded by the Talis Elevate player when the content has originated from Copyright Clearance. This is in addition to `player.download`.
+
+| Column | Description | Example |
+| --- | --- | --- |
+| `dimension_1` | The tenancy short code | `broadminster` |
+
+<br/>
+<a name="player-search"></a>
+
+### Events with class `player.search`
+
+| Column | Description | Example |
+| --- | --- | --- |
+| `dimension_1` | The tenancy short code | `broadminster` |
+| `dimension_2` | The module ID relating to the content being played |
+| `dimension_3` | The resource ID relating to the content being played |
+| `dimension_4` | User's Globally Unique ID, can be joined to [`public.f_rl_users.talis_guid`]({{ site.baseurl }}/topics/users.html). | `myoVK7wfosXXWlw` |
+
 <a name="list-entry_point"></a>
 
 ### Events with class `list.entry_point`
