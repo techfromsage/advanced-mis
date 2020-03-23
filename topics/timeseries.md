@@ -125,6 +125,8 @@ these columns depends on the `event_class` in question and is documented in deta
 
 ### Events with class `player.view`
 
+`digitisation.view` is also recorded by the Talis Elevate player when the content has originated from Copyright Clearance. This is in addition to `player.view`.
+
 | Column | Description | Example |
 | --- | --- | --- |
 | `dimension_1` | The tenancy short code | `broadminster` |
@@ -172,6 +174,8 @@ these columns depends on the `event_class` in question and is documented in deta
 <a name="player-download"></a>
 
 ### Events with class `player.download`
+
+`digitisation.download` is also recorded by the Talis Elevate player when the content has originated from Copyright Clearance. This is in addition to `player.download`.
 
 | Column | Description | Example |
 | --- | --- | --- |
@@ -335,6 +339,8 @@ Only available when using new list view and new list edit from November 2019 onw
 
 ### Events with class `digitisation.view`
 
+This event indicates that a digitisation has been viewed.
+
 | Column | Description | Example |
 | --- | --- | --- |
 | `dimension_1` | The tenancy short code | `broadminster` | 
@@ -346,6 +352,8 @@ Only available when using new list view and new list edit from November 2019 onw
 <a name="digitisation-print-showmodal"></a>
 
 ### Events with class `digitisation.print.showModal`
+
+This event indicates whether the user has opened the print modal window in the copyright clearance viewer. It is a measure of intention only, as we have no direct way to ascertain whether a user has actually physically printed the digitisation. The download of a digitisation for printing is also recorded as a `digitisation.download`.
 
 | Column | Description | Example |
 | --- | --- | --- |
@@ -359,6 +367,8 @@ Only available when using new list view and new list edit from November 2019 onw
 
 ### Events with class `digitisation.print`
 
+This event is only emitted from Talis Elevate if the resource being viewed is a digitisation request. It is NOT emitted from Copyright Clearance. See note on the `digitisation.print.showModal` event. 
+
 | Column | Description | Example |
 | --- | --- | --- |
 | `dimension_1` | The tenancy short code | `broadminster` | 
@@ -370,6 +380,10 @@ Only available when using new list view and new list edit from November 2019 onw
 <a name="digitisation-download"></a>
 
 ### Events with class `digitisation.download`
+
+This event is emitted whenever anyone requests a download of a digitisation in Talis Aspire Copyright Clearance. This could be either a direct request to download or via the print modal form.
+
+This event is also emitted in Talis Elevate when the user requests to download a resource which is copyright cleared. 
 
 | Column | Description | Example |
 | --- | --- | --- |
