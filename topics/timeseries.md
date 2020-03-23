@@ -48,6 +48,8 @@ these columns depends on the `event_class` in question and is documented in deta
 
 ### Events with class `annotations.readingIntention`
 
+This event is emitted when a user adds or changes a reading intention on a list. This event can tell you how often the reading intention feature is being used.
+
 | Column | Description | Example |
 | --- | --- | --- |
 | `dimension_1` | The tenancy short code | `broadminster` |
@@ -59,6 +61,8 @@ these columns depends on the `event_class` in question and is documented in deta
 
 ### Events with class `login.success`
 
+This event is emitted when a user has successfully logged in.
+
 | Column | Description | Example |
 | --- | --- | --- |
 | `dimension_1` | SSO Service ID, which is usually equivalent to the tenancy short code | `broadminster` |
@@ -67,6 +71,8 @@ these columns depends on the `event_class` in question and is documented in deta
 <a name="bookmark-created"></a>
 
 ### Events with class `bookmark.created`
+
+This event is emitted when a user has created a bookmark.
 
 | Column | Description | Example |
 | --- | --- | --- |
@@ -78,6 +84,10 @@ these columns depends on the `event_class` in question and is documented in deta
 
 ### Events with class `addToList`
 
+This event is emitted when a user has added a bookmark to a list. Only in classic
+
+<span class="deprecated">DEPRECATED</span> you will find `list.edit` to contain more useful information about what has been added to a list and when.
+
 | Column | Description | Example |
 | --- | --- | --- |
 | `dimension_1` | The tenancy short code | `broadminster` |
@@ -87,6 +97,8 @@ these columns depends on the `event_class` in question and is documented in deta
 <a name="list-publish"></a>
 
 ### Events with class `list.publish`
+
+This event is emitted when a list is published.
 
 | Column | Description | Example |
 | --- | --- | --- |
@@ -215,7 +227,7 @@ Only available when using new list view and new list edit from November 2019 onw
 
 ### Events with class `list.edit`
 
-This event is designed to give detail about the types of edit events happening to lists.
+This event is designed to give detail about the types of edit events happening to lists. Only available if using new list edit.
 
 | Column | Description | Examples |
 | --- | --- | --- |
@@ -316,6 +328,10 @@ Only available when using new list view and new list edit from November 2019 onw
 
 ### Events with class `user.identified`
 
+This event is emitted after a user has successfully logged in, and after we have been able to match the user to an existing Talis profile.
+
+This event can be useful to map users in Talis Aspire back to identifiers that make sense to other university datasets.
+
 | Column | Description | Example |
 | --- | --- | --- |
 | `dimension_1` | The tenancy short code | `broadminster` |
@@ -326,6 +342,8 @@ Only available when using new list view and new list edit from November 2019 onw
 <a name="resource-edit"></a>
 
 ### Events with class `resource.edit`
+
+This event indicates that a resource used on a reading list has been edited.
 
 | Column | Description | Example |
 | --- | --- | --- |
