@@ -207,6 +207,20 @@ Only available when using new list view and new list edit from November 2019 onw
 | `dimension_3` | User's Globally Unique ID, can be joined to [`public.f_rl_users.talis_guid`]({{ site.baseurl }}/topics/users.html). | `myoVK7wfosXXWlw` |
 
 <br/>
+<a name="list-edit"></a>
+
+### Events with class `list.edit`
+
+This event is designed to give detail about the types of edit events happening to lists.
+
+| Column | Description | Examples |
+| --- | --- | --- |
+| `dimension_1` | The tenancy short code |`broadminster` | 
+| `dimension_2` | The edit action. A colon separates the action target from the action type. You can read this as "this thing had an edit action applied"| `item:create` |
+| `dimension_3` | List's Globally Unique ID, can be joined to [`public.f_rl_lists.guid`]({{ site.baseurl }}/topics/lists.html)   | `DE53F159-8AE9-F8D4-6518-263DED7D56E9` 
+| `dimension_4` | User's Globally Unique ID, can be joined to [`public.f_rl_users.talis_guid`]({{ site.baseurl }}/topics/users.html). | `myoVK7wfosXXWlw` |
+
+<br/>
 <a name="list-item-click"></a>
 
 ### Events with class `list.item.click`
