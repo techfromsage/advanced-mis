@@ -13,7 +13,7 @@ There are several different views representing different sliding window lengths 
 1. `f_event_timeseries_1hr` 
     - where the event counts and sums are per hour
 1. `f_event_timeseries_24hr` 
-    - where the event counts and sums are per day. 
+    - where the event counts and sums are per day 
     - up to 36 months historical data
 1. `f_event_timeseries_24hr_last_3_months`
     - where the event counts and sums are per day
@@ -84,9 +84,9 @@ This event is emitted when a user has created a bookmark.
 
 ### Events with class `addToList`
 
-This event is emitted when a user has added a bookmark to a list. Only in classic
+This event is emitted when a user has added a bookmark to a list. 
 
-<span class="deprecated">DEPRECATED</span> you will find `list.edit` to contain more useful information about what has been added to a list and when.
+Take a look at [`list.edit`](#list-edit) which includes additional detail about what has been added to a list and when.
 
 | Column | Description | Example |
 | --- | --- | --- |
