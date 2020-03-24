@@ -30,4 +30,4 @@ body_class: hierarchy
 | `published_list_count` | `INTEGER` | Number of any published (or published with unpublished changes) lists attached to this hierarchy node | `2` |
 | `draft_list_count` | `INTEGER` | Number of any draft only lists attached to this hierarchy node | `1` |
 
-**WARNING:** Because this is a beta service, the data dictionary is subject to change. For that reason always refer to column names directly in your SQL statements, not column positions.
+**WARNING:** The data dictionary is subject to change. For that reason always refer to column names directly in your SQL statements, not column positions.

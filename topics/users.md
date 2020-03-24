@@ -34,4 +34,4 @@ body_class: users
 | `saml_user_id` | `VARCHAR(255)` | SAML ID (persistent ID) sent to us by the single sign on solution to uniquely identify this user. Useful for linking to other non-Talis institutional user data | `029O6lrAi14=-@myinst.ac.uk` |
 | `talis_guid` | `VARCHAR(255)` | Talis user ID to link to other non-reading list Talis data | `myoVK7wfosXXWlw` |
 
-**WARNING:** Because this is a beta service, the data dictionary is subject to change. For that reason always refer to column names directly in your SQL statements, not column positions.
+**WARNING:** The data dictionary is subject to change. For that reason always refer to column names directly in your SQL statements, not column positions.

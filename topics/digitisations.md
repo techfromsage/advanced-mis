@@ -9,7 +9,7 @@ body_class: digitisations
   <dd>Digitisations</dd>
 
   <dt>Description</dt>
-  <dd>Copyright cleared request data</dd>
+  <dd>Copyright cleared digitisation request data</dd>
 
   <dt>Database location</dt>
   <dd><code>public.f_dc_requests</code></dd>
@@ -19,7 +19,7 @@ body_class: digitisations
 
 | Column Name | Datatype | Description  | Example
 | --- | --- | --- | ---------- | --- |
-| `request_id` | `INTEGER` | Request identifier, should be used to joining to other data | `2` |
+| `request_id` | `INTEGER` | Request identifier, should be used for joining to other data | `2` |
 | `request_date` | `TIMESTAMP` | Date the request was made | `2017-08-24 00:00:00` |
 | `course_code` | `VARCHAR(128)` | Course code the request was made for | `LAW101` |
 | `course_title` | `VARCHAR(255)` | Course title the request was made for  | `Intro to Law` |
@@ -41,4 +41,4 @@ body_class: digitisations
 | `rl_item_url` | `VARCHAR(255)` | If the item is linked to a reading list item, the canonical URL of that item |  |
 | `item_guid` | `VARCHAR(255)` | The guid of the reading list item, to be used for joining data | `478A70D8-C627-91EC-D681-FFE617FABDD9` |
 
-**WARNING:** Because this is a beta service, the data dictionary is subject to change. For that reason always refer to column names directly in your SQL statements, not column positions.
+**WARNING:** The data dictionary is subject to change. For that reason always refer to column names directly in your SQL statements, not column positions.

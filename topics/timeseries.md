@@ -8,12 +8,24 @@ Timeseries data differs from the [raw]({{site.baseurl}}/topics/raw.html) data in
 by a number of dimensions and then rolled up into a sliding window. This compresses the amount of data
 significantly, which is useful for dashboarding and trend analysis.
 
-There are two different tables representing the two sliding window lengths:
+There are several different views representing different sliding window lengths and history:
 
-1. `f_event_timeseries_1hr` where the event counts and sums are per hour
-1. `f_event_timeseries_24hr` where the event counts and sums are per day
+1. `f_event_timeseries_1hr` 
+    - where the event counts and sums are per hour
+1. `f_event_timeseries_24hr` 
+    - where the event counts and sums are per day 
+    - up to 36 months historical data
+1. `f_event_timeseries_24hr_last_3_months`
+    - where the event counts and sums are per day
+    - up to 3 months historical data
+1. `f_event_timeseries_24hr_last_6_months`
+    - where the event counts and sums are per day
+    - up to 6 months historical data
+1. `f_event_timeseries_24hr_last_12_months` 
+    - where the event counts and sums are per day
+    - up to 12 months historical data
 
-Each sliding window has its own data retention policy [which is documented here]({{site.baseurl}}/topics/limits.html).
+Each sliding window has its own data retention policy [which is documented here]({{site.baseurl}}/topics/limits.html). Data ages out on a daily basis, so 3 months ago is 90 days from today's date.
 
 Both tables share a common schema, with up to four `dimension_*` columns available. The definition of
 these columns depends on the `event_class` in question and is documented in detail below.
@@ -36,6 +48,8 @@ these columns depends on the `event_class` in question and is documented in deta
 
 ### Events with class `annotations.readingIntention`
 
+This event is emitted when a user adds or changes a reading intention on a list. This event can tell you how often the reading intention feature is being used.
+
 | Column | Description | Example |
 | --- | --- | --- |
 | `dimension_1` | The tenancy short code | `broadminster` |
@@ -47,6 +61,8 @@ these columns depends on the `event_class` in question and is documented in deta
 
 ### Events with class `login.success`
 
+This event is emitted when a user has successfully logged in.
+
 | Column | Description | Example |
 | --- | --- | --- |
 | `dimension_1` | SSO Service ID, which is usually equivalent to the tenancy short code | `broadminster` |
@@ -55,6 +71,8 @@ these columns depends on the `event_class` in question and is documented in deta
 <a name="bookmark-created"></a>
 
 ### Events with class `bookmark.created`
+
+This event is emitted when a user has created a bookmark.
 
 | Column | Description | Example |
 | --- | --- | --- |
@@ -66,6 +84,10 @@ these columns depends on the `event_class` in question and is documented in deta
 
 ### Events with class `addToList`
 
+This event is emitted when a user has added a bookmark to a list. 
+
+Take a look at [`list.edit`](#list-edit) which includes additional detail about what has been added to a list and when.
+
 | Column | Description | Example |
 | --- | --- | --- |
 | `dimension_1` | The tenancy short code | `broadminster` |
@@ -75,6 +97,8 @@ these columns depends on the `event_class` in question and is documented in deta
 <a name="list-publish"></a>
 
 ### Events with class `list.publish`
+
+This event is emitted when a list is published.
 
 | Column | Description | Example |
 | --- | --- | --- |
@@ -112,6 +136,8 @@ these columns depends on the `event_class` in question and is documented in deta
 <a name="player-view"></a>
 
 ### Events with class `player.view`
+
+`digitisation.view` is also recorded by the Talis Elevate player when the content has originated from Copyright Clearance. This is in addition to `player.view`.
 
 | Column | Description | Example |
 | --- | --- | --- |
@@ -161,6 +187,8 @@ these columns depends on the `event_class` in question and is documented in deta
 
 ### Events with class `player.download`
 
+`digitisation.download` is also recorded by the Talis Elevate player when the content has originated from Copyright Clearance. This is in addition to `player.download`.
+
 | Column | Description | Example |
 | --- | --- | --- |
 | `dimension_1` | The tenancy short code | `broadminster` |
@@ -169,6 +197,26 @@ these columns depends on the `event_class` in question and is documented in deta
 | `dimension_4` | User's Globally Unique ID, can be joined to [`public.f_rl_users.talis_guid`]({{ site.baseurl }}/topics/users.html). | `myoVK7wfosXXWlw` |
 
 <br/>
+<a name="player-profile-complete"></a>
+
+### Events with class `player.profile.complete`
+
+| Column | Description | Example |
+| --- | --- | --- |
+| `dimension_1` | The tenancy short code | `broadminster` |
+
+<br/>
+<a name="player-search"></a>
+
+### Events with class `player.search`
+
+| Column | Description | Example |
+| --- | --- | --- |
+| `dimension_1` | The tenancy short code | `broadminster` |
+| `dimension_2` | The module ID relating to the content being played |
+| `dimension_3` | The resource ID relating to the content being played |
+| `dimension_4` | User's Globally Unique ID, can be joined to [`public.f_rl_users.talis_guid`]({{ site.baseurl }}/topics/users.html). | `myoVK7wfosXXWlw` |
+
 <a name="list-entry_point"></a>
 
 ### Events with class `list.entry_point`
@@ -193,6 +241,20 @@ Only available when using new list view and new list edit from November 2019 onw
 | `dimension_1` | The tenancy short code | `broadminster` |
 | `dimension_2` | List's Globally Unique ID, can be joined to [`public.f_rl_lists.guid`]({{ site.baseurl }}/topics/lists.html)   | `DE53F159-8AE9-F8D4-6518-263DED7D56E9` |
 | `dimension_3` | User's Globally Unique ID, can be joined to [`public.f_rl_users.talis_guid`]({{ site.baseurl }}/topics/users.html). | `myoVK7wfosXXWlw` |
+
+<br/>
+<a name="list-edit"></a>
+
+### Events with class `list.edit`
+
+This event is designed to give detail about the types of edit events happening to lists. Only available if using new list edit.
+
+| Column | Description | Examples |
+| --- | --- | --- |
+| `dimension_1` | The tenancy short code |`broadminster` | 
+| `dimension_2` | The edit action. A colon separates the action target from the action type. You can read this as "this thing had an edit action applied"| `item:create` |
+| `dimension_3` | List's Globally Unique ID, can be joined to [`public.f_rl_lists.guid`]({{ site.baseurl }}/topics/lists.html)   | `DE53F159-8AE9-F8D4-6518-263DED7D56E9` 
+| `dimension_4` | User's Globally Unique ID, can be joined to [`public.f_rl_users.talis_guid`]({{ site.baseurl }}/topics/users.html). | `myoVK7wfosXXWlw` |
 
 <br/>
 <a name="list-item-click"></a>
@@ -286,6 +348,10 @@ Only available when using new list view and new list edit from November 2019 onw
 
 ### Events with class `user.identified`
 
+This event is emitted after a user has successfully logged in, and after we have been able to match the user to an existing Talis profile.
+
+This event can be useful to map users in Talis Aspire back to identifiers that make sense to other university datasets.
+
 | Column | Description | Example |
 | --- | --- | --- |
 | `dimension_1` | The tenancy short code | `broadminster` |
@@ -297,9 +363,69 @@ Only available when using new list view and new list edit from November 2019 onw
 
 ### Events with class `resource.edit`
 
+This event indicates that a resource used on a reading list has been edited.
+
 | Column | Description | Example |
 | --- | --- | --- |
 | `dimension_1` | The tenancy short code | `broadminster` |
 | `dimension_2` | Globally Unique ID of the resource | `B6B74633-45D0-6787-5F99-7A9E03DB9182` |
 | `dimension_3` | Edit context of the action, possible values are (`my_bookmarks`, `item_view`, `list_edit`, `reviews`) | `list_edit` |
 | `dimension_4` | User's Globally Unique ID, can be joined to [`public.f_rl_users.talis_guid`]({{ site.baseurl }}/topics/users.html). | `myoVK7wfosXXWlw` |
+
+<br/>
+<a name="digitisation-view"></a>
+
+### Events with class `digitisation.view`
+
+This event indicates that a digitisation has been viewed.
+
+| Column | Description | Example |
+| --- | --- | --- |
+| `dimension_1` | The tenancy short code | `broadminster` | 
+| `dimension_2` | The request id. Can be used to join to the `f_dc_requests` view. | `1673`
+| `dimension_3` | not used | |
+| `dimension_4` | not used | |
+
+<br/>
+<a name="digitisation-print-showmodal"></a>
+
+### Events with class `digitisation.print.showModal`
+
+This event indicates whether the user has opened the print modal window in the copyright clearance viewer. It is a measure of intention only, as we have no direct way to ascertain whether a user has actually physically printed the digitisation. The download of a digitisation for printing is also recorded as a `digitisation.download`.
+
+| Column | Description | Example |
+| --- | --- | --- |
+| `dimension_1` | The tenancy short code | `broadminster` | 
+| `dimension_2` | The request id. Can be used to join to the `f_dc_requests` view. | `1673`
+| `dimension_3` | not used | |
+| `dimension_4` | not used | |
+
+<br/>
+<a name="digitisation-print"></a>
+
+### Events with class `digitisation.print`
+
+This event is only emitted from Talis Elevate if the resource being viewed is a digitisation request. It is NOT emitted from Copyright Clearance. See note on the `digitisation.print.showModal` event. 
+
+| Column | Description | Example |
+| --- | --- | --- |
+| `dimension_1` | The tenancy short code | `broadminster` | 
+| `dimension_2` | The request id. Can be used to join to the `f_dc_requests` view. | `1673`
+| `dimension_3` | not used | |
+| `dimension_4` | not used | |
+
+<br/>
+<a name="digitisation-download"></a>
+
+### Events with class `digitisation.download`
+
+This event is emitted whenever anyone requests a download of a digitisation in Talis Aspire Copyright Clearance. This could be either a direct request to download or via the print modal form.
+
+This event is also emitted in Talis Elevate when the user requests to download a resource which is copyright cleared. 
+
+| Column | Description | Example |
+| --- | --- | --- |
+| `dimension_1` | The tenancy short code | `broadminster` | 
+| `dimension_2` | The request id. Can be used to join to the `f_dc_requests` view. | `1673`
+| `dimension_3` | not used | |
+| `dimension_4` | not used | |
