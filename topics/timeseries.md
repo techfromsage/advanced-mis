@@ -201,8 +201,6 @@ This event is emitted when a list is published.
 
 ### Events with class `player.profile.complete`
 
-`digitisation.download` is also recorded by the Talis Elevate player when the content has originated from Copyright Clearance. This is in addition to `player.download`.
-
 | Column | Description | Example |
 | --- | --- | --- |
 | `dimension_1` | The tenancy short code | `broadminster` |
