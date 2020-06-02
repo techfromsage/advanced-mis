@@ -14,4 +14,4 @@ RUN bundle install
 RUN apk del build-base
 COPY ./ ./advanced-mis
 EXPOSE 4000
-CMD rm Gemfile.lock && bundle exec jekyll serve --host 0.0.0.0 --baseurl ""
+CMD rm -f Gemfile.lock && bundle exec jekyll serve --host 0.0.0.0 --baseurl ""

@@ -38,7 +38,7 @@ header {
 .brand {
   height: 9em;
 
-  background-image: url("../images/logo.png");
+  background-image: url("../images/logo.svg");
   background-position: 0 45%;
   background-repeat: no-repeat;
 }
@@ -402,7 +402,6 @@ abbr {
 (min-resolution: 192dpi) {
   /* Retina-specific stuff here */
   .brand {
-    background-image: url("../images/logo@2x.png");
     background-size: 127px 53px;
   }
 }
