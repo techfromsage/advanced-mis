@@ -197,6 +197,20 @@ This event is emitted when a list is published.
 | `dimension_4` | User's Globally Unique ID, can be joined to [`public.f_rl_users.talis_guid`]({{ site.baseurl }}/topics/users.html). | `myoVK7wfosXXWlw` |
 
 <br/>
+<a name="modulemanager-timer"></a>
+
+### Events with class `modulemanager.timer`
+
+| Column | Description | Example |
+| --- | --- | --- |
+| `dimension_1` | The tenancy short code | `broadminster` |
+| `dimension_2` | The module ID relating to the content being played |
+| `dimension_3` | User's Globally Unique ID, can be joined to [`public.f_rl_users.talis_guid`]({{ site.baseurl }}/topics/users.html). | `myoVK7wfosXXWlw` |
+| `event_sum` | The sum in milliseconds of the time spent playing content for the given dimensions and window | `55212` |
+
+<br/>
+
+<br/>
 <a name="player-profile-complete"></a>
 
 ### Events with class `player.profile.complete`
