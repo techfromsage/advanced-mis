@@ -209,8 +209,6 @@ This event is emitted when a list is published.
 | `event_sum` | The sum in milliseconds of the time spent playing content for the given dimensions and window | `55212` |
 
 <br/>
-
-<br/>
 <a name="player-profile-complete"></a>
 
 ### Events with class `player.profile.complete`
