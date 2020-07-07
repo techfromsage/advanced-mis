@@ -80,7 +80,8 @@ The process for connecting to SQLWorkbenchJ will be similar for many other SQL c
 3. In the driver drop down, select `Amazon Redshift (com.amazon.redshift.jdbc.Driver)`
 4. In the URL field, add the server domain, followed by `/` and then your database name
 5. Add the username and password in the correct fields
-6. Click OK
+6. **Important**: Make Sure 'Autocommit' is ticked.
+7. Click OK
 
 In the next screen, you should see the workspace window. Choose **Tools > Show Database Explorer** to have a look around.
 
