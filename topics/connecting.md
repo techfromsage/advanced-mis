@@ -20,10 +20,14 @@ We need an __externally visible__ IP Address or a range of IP Addresses for each
 
 User workstations will need to either have a statically assigned IP Address, or be part of a known subnet range which is ideally __not__ a range that covers every IP Address in the whole uni.
 
-Typically University IT departments can do one of the following:
+If you are working from home, we will still need an IP Address, but it must be a university IP Address assigned by your Virtual Private Network (VPN) which your IT department will be able to help you with. We will not allow access to residential IP addresses as these can change frequently and at the whim of the Internet Service Provider and are not controlled by the University.
 
+Typically University IT departments will need to do one or more of the following:
+
+* Allow traffic to leave the university on port 5439 to the database connection (Talis can advise you what this is) 
 * Use DHCP to statically lease an IP address to a known workstation (usually using the MAC address of the network interface). If the device is a laptop and may have both wired and wireless network cards, then multiple statically leased IP addresses may be required.
 * Lease a known range of IP Addresses to a range of workstations. For example, this might be "all library staff PCs" or "all PCs sited in the administration office" It is up to University network teams to determine what is the most sensible way to achieve this.
+* Use a Virtual Private Network (VPN) to allow a connection from your laptop at home to be connected to the university network. These often have different IP addresses in this situation.
 
 __IMPORTANT__ the IP address must be an IP Address that will been seen by Talis in the outbound connection from the University network to the Talis Aspire Advanced MIS data warehouse. Internally assigned private network IP addresses will not suffice. For example, these ranges (shown as CIDR block with subnet mask) are not suitable: `10.0.0.0/8 (255.0.0.0)` or `172.16.0.0/12 (255.240.0.0)` or `192.168.0.0/16 (255.255.0.0)`.
 
