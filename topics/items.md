@@ -44,7 +44,7 @@ body_class: items
 | `importance` | `VARCHAR(255)` | Importance level of the item, limited to the values configured in your tenancy | `Suggested for student purchase` |
 | `publisher` | `VARCHAR(4096)` | Publisher of the resource | `SAGE` |
 | `format` | `VARCHAR(255)` | Format of the resource | `electronic resource` |
-| `web_address` | `VARCHAR(4096)` | Web Address of the resource. Colon space separated if there are multiple web addresses. | `http://...; http://` |
+| `web_address` | `VARCHAR(4096)` | Web Address of the resource. Colon + space `; ` separated if there are multiple web addresses. | `http://...; https://` |
 | `digitisation_id` | `VARCHAR(255)` | ID of the digitisation request in Talis Aspire Digitised Content that this item is linked to | `22` |
 | `digitisation_status` | `VARCHAR(32)` | Status of the digitisation, e.g. `LIVE`, `EXPIRED` | `LIVE` |
 | `has_container` | `VARCHAR(255)` | The parent container GUID of the item - could be the list itself, or a section within the list. Prefixed with the type `tenantLists` or `tenantSections` to mark out type  | `tenantSections:9CBA2921-17BD-0A62-7942-421DCD8E79E6` |
