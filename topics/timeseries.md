@@ -309,9 +309,9 @@ Only available when using new list view and new list edit from November 2019 onw
 | `dimension_4` | The external link's domain name | `www.dawsonera.com` |
 
 <br/>
-<a name="lti-link-followed"></a>
+<a name="lti-links"></a>
 
-### Events with class `lti.link.followed`
+### Events with class `lti.link.followed`, `lti.link.best_guess.found_list`, `lti.link.best_guess.search`, `lti.link.best_guess.homepage`
 
 | Column | Description | Example |
 | --- | --- | --- |
