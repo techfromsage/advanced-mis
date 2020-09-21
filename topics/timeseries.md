@@ -171,6 +171,42 @@ This event is emitted when a list is published.
 | `dimension_4` | User's Globally Unique ID, can be joined to [`public.f_rl_users.talis_guid`]({{ site.baseurl }}/topics/users.html). | `myoVK7wfosXXWlw` |
 
 <br/>
+<a name="player-annotate-createannotation-createcomment"></a>
+
+### Events with class `player.annotate.createannotation.createcomment`
+
+| Column | Description | Example |
+| --- | --- | --- |
+| `dimension_1` | The tenancy short code | `broadminster` |
+| `dimension_2` | The module ID relating to the content being played |
+| `dimension_3` | The resource ID relating to the content being played |
+| `dimension_4` | User's Globally Unique ID, can be joined to [`public.f_rl_users.talis_guid`]({{ site.baseurl }}/topics/users.html). | `myoVK7wfosXXWlw` |
+
+<br/>
+<a name="player-annotate-createannotation-personalnote"></a>
+
+### Events with class `player.annotate.createannotation.personalnote`
+
+| Column | Description | Example |
+| --- | --- | --- |
+| `dimension_1` | The tenancy short code | `broadminster` |
+| `dimension_2` | The module ID relating to the content being played |
+| `dimension_3` | The resource ID relating to the content being played |
+| `dimension_4` | User's Globally Unique ID, can be joined to [`public.f_rl_users.talis_guid`]({{ site.baseurl }}/topics/users.html). | `myoVK7wfosXXWlw` |
+
+<br/>
+<a name="player-annotate-createannotation-anonymouscomment"></a>
+
+### Events with class `player.annotate.createannotation.anonymouscomment`
+
+| Column | Description | Example |
+| --- | --- | --- |
+| `dimension_1` | The tenancy short code | `broadminster` |
+| `dimension_2` | The module ID relating to the content being played |
+| `dimension_3` | The resource ID relating to the content being played |
+| `dimension_4` | User's Globally Unique ID, can be joined to [`public.f_rl_users.talis_guid`]({{ site.baseurl }}/topics/users.html). | `myoVK7wfosXXWlw` |
+
+<br/>
 <a name="player-annotate-createreply"></a>
 
 ### Events with class `player.annotate.createreply`
