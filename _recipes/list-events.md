@@ -8,7 +8,7 @@ description: Working with list events to understand list activity
 
 ## Background
 
-Sometimes you might want to know about how people are finding the lists. The sort of questions you might ask are:
+Sometimes you want to know about how people are interacting with lists. The sort of questions you might ask are:
 
 * Are students using the LTI integration to get to lists?
 * Are lists or sections being linked to with the LTI integration?
@@ -18,6 +18,8 @@ Sometimes you might want to know about how people are finding the lists. The sor
 * Are students interacting with the online systems that are being made available to support COVID course delivery adjustments?
 * Which items on a list have most interactions?
 * Which links to external content are most popular?
+
+There are a host of variations of those questions, but they can all be answered using some events that capture activity on a list.  This recipe gives you a number of sample queries that give you a detailed view of activity in the system. 
 
 ## Queries
 
