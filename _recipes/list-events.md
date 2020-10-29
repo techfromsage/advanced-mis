@@ -21,6 +21,8 @@ Sometimes you want to know about how people are interacting with lists. The sort
 
 There are a host of variations of those questions, but they can all be answered using some events that capture activity on a list.  This recipe gives you a number of sample queries that give you a detailed view of activity in the system. 
 
+For a full definition of each event class used in these examples, refer to the [event class definitions]({{ site.baseurl }}/topics/event-classes.html).
+
 ## Queries
 
 It is useful to know how much data you have available to you And you'll have different amounts of data depending on which timeseries tables you are looking in. This query finds the earliest and latest date an event was seen for each event_class.
@@ -84,7 +86,7 @@ group by entry_point;
 Maybe you are building a system to give a personal tutor a view of what a student is interacting with. Or you want to see which students are not engaging with online systems.
 
 ```redshift
-select distinct dimension_4, dimension_1
+select distinct dimension_4 as user, dimension_1 as list
 from f_event_timeseries_24hr
 where event_class = 'list.entry_point'
 order by dimension_4;
@@ -93,7 +95,7 @@ order by dimension_4;
 Beyond the list itself, there is a wealth of detail about how individuals are using the lists. Maybe you want to know which item across all lists is clicked on the most?
 
 ```redshift
-select dimension_2, sum(event_count)
+select dimension_2 as item, sum(event_count)
 from f_event_timeseries_24hr
 where event_class = 'list.item.click'
 group by dimension_2
@@ -104,7 +106,7 @@ limit 10;
 Or maybe you want to know which list features, such as online resource links, bookstore links, catalogue links etc are used the most when leaving the list?
 
 ```redshift
-select split_part(dimension_3, ':', 2) as interaction_type, sum(event_count)
+select split_part(dimension_3, ':', 2) as action_type, sum(event_count)
 from f_event_timeseries_24hr
 where event_class = 'list.item.click'
 group by interaction_type;
@@ -113,10 +115,20 @@ group by interaction_type;
 Or maybe you are only interested in external links and which destinations are proving the most popular?
 
 ```redshift
-select dimension_4, sum(event_count)
+select dimension_4 as external_link_domain, sum(event_count)
 from f_event_timeseries_24hr
 where event_class = 'list.item.external_link.click'
 group by dimension_4
+```
+
+Maybe you want to get a summary of when edits were made on a particular list and by whom? Note that because we are looking at this in the `f_rl_timeseries_24hr` data, the events are aggregated up to the day. If you want more granularity, you would have to read from the `f_rl_timeseries_1hr` view. 
+
+```redshift
+select time_window, dimension_2 as edit_action, event_count, dimension_4 as user
+from f_event_timeseries_24hr
+where event_class = 'list.edit'
+and dimension_3 = 'A-LIST-ID-HERE' -- example DE53F159-8AE9-F8D4-6518-263DED7D56E9
+order by time_window ASC;
 ```
 
 ## Assumptions
