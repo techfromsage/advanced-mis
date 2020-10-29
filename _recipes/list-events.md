@@ -34,6 +34,14 @@ group by event_class;
 
 Sometimes you want to know how often an event happened over time. This query will give you the number of list views each month split over each of the list view modes. This will give you up to 4 data series that you could plot on a line chart to compare student views against academic edits to see when peak periods were for both of those user types.
 
+View mode will be one of:
+
+- `view` — a student or non-logged in view of the list
+- `view_draft` — a user is looking at a draft but not allowed to edit the list 
+- `edit` — a user who can edit the list is looking at it
+- `view_as_student` — a user who can edit the list has elected to view the list as if they were a student.
+
+
 ```redshift
 -- list view mode over time
 select 
@@ -47,7 +55,7 @@ group by view_mode, year, month
 order by view_mode, year, month;
 ```
 
-Maybe you want to know whether LTI or direct requests are most prevalent. Here we use the second part of dimension_3 to inspect the method used for the request into Talis Aspire. 
+Maybe you want to know whether LTI or direct requests are most prevalent. Here we use the second part of dimension_3 to inspect the method used for the request into Talis Aspire. In this query, `view_method` will either be `direct` or `lti`
 
 ```redshift
 select
