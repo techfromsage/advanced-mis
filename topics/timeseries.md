@@ -111,7 +111,7 @@ This event is emitted when a list is published.
 
 ### Events with class `player.timer.2`
 
-Talis Elevate allows you to upload video or youtube clips, or 'play' pdf files. This event tracks how long a user spent viewing some content in the Talis Elevate content player.
+Talis Elevate allows you to upload video or youtube clips, or 'play' pdf files. This event tracks how long a user spent viewing some content in the Talis Elevate content player. The user could be the owner of a resource or a contributor.
 
 | Column | Description | Example |
 | --- | --- | --- |
@@ -126,9 +126,9 @@ Talis Elevate allows you to upload video or youtube clips, or 'play' pdf files. 
 
 ### Events with class `player.timer.2.contributors`
 
-Talis Elevate allows you to upload video or youtube clips, or 'play' pdf files. This event tracks how long a user spent viewing some content in the Talis Elevate content player.
+Talis Elevate allows you to upload video or youtube clips, or 'play' pdf files. This event tracks how long a user, who is not the resource owner, spent viewing some content in the Talis Elevate content player.
 
-A contributor is a user other than the owner of the content being viewed, and typically a student.
+A contributor is a user other than the owner of the resource being viewed, and typically a student.
 
 | Column | Description | Example |
 | --- | --- | --- |
@@ -143,6 +143,8 @@ A contributor is a user other than the owner of the content being viewed, and ty
 
 ### Events with class `player.view`
 
+A view of a resource by anyone.
+
 `digitisation.view` is also recorded by the Talis Elevate player when the content has originated from Copyright Clearance. This is in addition to `player.view`.
 
 | Column | Description | Example |
@@ -156,6 +158,8 @@ A contributor is a user other than the owner of the content being viewed, and ty
 <a name="player-view-contributors"></a>
 
 ### Events with class `player.view.contributors`
+
+A view of a resource by a user who is not the resource owner.
 
 A contributor is a user other than the owner of the content being viewed, and typically a student.
 
@@ -212,6 +216,8 @@ A user has replied to a comment on a Talis Elevate player resource.
 <a name="modulemanager-timer"></a>
 
 ### Events with class `modulemanager.timer`
+
+How long a user with access to the module manager spent in the module manager. This is typically an academic user.
 
 | Column | Description | Example |
 | --- | --- | --- |
