@@ -111,6 +111,8 @@ This event is emitted when a list is published.
 
 ### Events with class `player.timer.2`
 
+Talis Elevate allows you to upload video or youtube clips, or 'play' pdf files. This event tracks how long a user spent viewing some content in the Talis Elevate content player.
+
 | Column | Description | Example |
 | --- | --- | --- |
 | `dimension_1` | The tenancy short code | `broadminster` |
@@ -123,6 +125,10 @@ This event is emitted when a list is published.
 <a name="player-timer-2-contributors"></a>
 
 ### Events with class `player.timer.2.contributors`
+
+Talis Elevate allows you to upload video or youtube clips, or 'play' pdf files. This event tracks how long a user spent viewing some content in the Talis Elevate content player.
+
+A contributor is a user other than the owner of the content being viewed, and typically a student.
 
 | Column | Description | Example |
 | --- | --- | --- |
@@ -151,6 +157,8 @@ This event is emitted when a list is published.
 
 ### Events with class `player.view.contributors`
 
+A contributor is a user other than the owner of the content being viewed, and typically a student.
+
 | Column | Description | Example |
 | --- | --- | --- |
 | `dimension_1` | The tenancy short code | `broadminster` |
@@ -163,6 +171,8 @@ This event is emitted when a list is published.
 
 ### Events with class `player.annotate.createannotation`
 
+A user has added a comment to a Talis Elevate player resource.
+
 | Column | Description | Example |
 | --- | --- | --- |
 | `dimension_1` | The tenancy short code | `broadminster` |
@@ -174,6 +184,8 @@ This event is emitted when a list is published.
 <a name="player-annotate-createreply"></a>
 
 ### Events with class `player.annotate.createreply`
+
+A user has replied to a comment on a Talis Elevate player resource.
 
 | Column | Description | Example |
 | --- | --- | --- |
@@ -206,12 +218,14 @@ This event is emitted when a list is published.
 | `dimension_1` | The tenancy short code | `broadminster` |
 | `dimension_2` | The module ID relating to the content being played |
 | `dimension_3` | User's Globally Unique ID, can be joined to [`public.f_rl_users.talis_guid`]({{ site.baseurl }}/topics/users.html). | `myoVK7wfosXXWlw` |
-| `event_sum` | The sum in milliseconds of the time spent playing content for the given dimensions and window | `55212` |
+| `event_sum` | The sum in milliseconds of the time spent in the module manager | `55212` |
 
 <br/>
 <a name="player-profile-complete"></a>
 
 ### Events with class `player.profile.complete`
+
+A user has completed filling in their profile.
 
 | Column | Description | Example |
 | --- | --- | --- |
@@ -221,6 +235,8 @@ This event is emitted when a list is published.
 <a name="player-search"></a>
 
 ### Events with class `player.search`
+
+A user has searched for something.
 
 | Column | Description | Example |
 | --- | --- | --- |
@@ -232,7 +248,12 @@ This event is emitted when a list is published.
 <a name="list-entry_point"></a>
 
 ### Events with class `list.entry_point`
+
 Only available when using new list view and new list edit from November 2019 onwards
+
+Use this event to see whether users are viewing lists directly, or coming through an LTI tool.
+
+This event also allows you to identify whether the user followed a link to the list, section or item. Remember this is the entry point, subsequent clicks by a user are recorded in the `list.item.click` event. 
 
 | Column | Description | Examples |
 | --- | --- | --- |
@@ -273,7 +294,11 @@ This event is designed to give detail about the types of edit events happening t
 
 ### Events with class `list.item.click`
 
-Only available when using new list view and new list edit from November 2019 onwards
+Only available when using new list view and new list edit from November 2019 onwards.
+
+This event will give you an overview of how users are interacting with the reading list.
+
+This should be seen as a expression of desire to do one of the click actions and doesn't necessarily mean that the thing clicked on was viewed.
 
 | Column | Description | Examples |
 | --- | --- | --- |
@@ -300,6 +325,12 @@ Only available when using new list view and new list edit from November 2019 onw
 <a name="list-item-external_link-click"></a>
 
 ### Events with class `list.item.external_link.click`
+
+External link clicks are triggered from the reading list and signal an intention of a user to go and view the thing clicked on. They don't necessarily mean that they go there, get past authentication and actually view the destination. 
+
+For example, they might click then immediately hit the back button if they didn't mean to actually go through and view. Or if they are not a logged in user, they may have been browsing the list but then not been able to actually view the digitisation when presented with a login challenge. 
+
+It is best to think of an external link click as an expression of desire to view a particular type of item, rather than a count of actual views.
 
 | Column | Description | Example |
 | --- | --- | --- |
