@@ -173,7 +173,7 @@ A contributor is a user other than the owner of the content being viewed, and ty
 <br/>
 <a name="player-annotate-createannotation"></a>
 
-### Events with class `player.annotate.createannotation`
+### Events with class `player.annotate.createannotation`, `player.annotate.createannotation.createcomment`, `player.annotate.createannotation.personalnote`, `player.annotate.createannotation.anonymouscomment`
 
 A user has added a comment to a Talis Elevate player resource.
 
