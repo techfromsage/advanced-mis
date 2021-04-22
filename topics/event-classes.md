@@ -43,7 +43,7 @@ This page is broken up into sections for different areas of Talis Aspire.
 | `lti.link.best_guess.homepage` | An LTI launch was invoked but had not been pre-created by an instructor, and resulted in finding no lists |  [<i class="yes fas fa-check-circle"><span class="sr-only">Available</span></i>](timeseries.html#lti-links)  |  [<i class="yes fas fa-check-circle"><span class="sr-only">Available</span></i>](raw.html#lti-links)  |
 | `resource.edit` | A resource was updated by a user |  [<i class="yes fas fa-check-circle"><span class="sr-only">Available</span></i>](timeseries.html#resource-edit)  | <i class="no fas fa-times-circle"><span class="sr-only">Not available</span></i> |
 
-&#10033; These events are only available when using [New List View](https://support.talis.com/hc/en-us/articles/360000008189).
+&#10033; These events are only available since using the revamped list view from aprroximately 2019 onwards. The first data in your tenancy will vary depending on when you switched to the new list view.
 
 ## Copyright Clearance
 
