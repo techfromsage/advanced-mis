@@ -18,7 +18,7 @@ body_class: digitisations
 ### Columns
 
 | Column Name | Datatype | Description  | Example
-| --- | --- | --- | ---------- | --- |
+| --- | --- | --- | ---------- |
 | `request_id` | `INTEGER` | Request identifier, should be used for joining to other data | `2` |
 | `request_date` | `TIMESTAMP` | Date the request was made | `2017-08-24 00:00:00` |
 | `course_code` | `VARCHAR(128)` | Course code the request was made for | `LAW101` |

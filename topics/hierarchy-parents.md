@@ -24,7 +24,7 @@ A parent in this view is the immediate parent of the node in the `url` column, a
 ### Columns
 
 | Column Name | Datatype | Description  | Example
-| --- | --- | --- | ---------- | --- |
+| --- | --- | --- | ---------- | 
 | `url` | `VARCHAR(4096)` | Canonical URL of the hierarchy node |  |
 | `parent_url` | `VARCHAR(4096)` | Canonical URL of the parent node  |  |
 

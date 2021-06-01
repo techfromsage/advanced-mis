@@ -18,7 +18,7 @@ body_class: hierarchy
 ### Columns
 
 | Column Name | Datatype | Description  | Example
-| --- | --- | --- | ---------- | --- |
+| --- | --- | --- | ---------- | 
 | `code` | `VARCHAR(255)` | Code of the hierarchy node. Note only unique when combined with type | `ABF203` |
 | `url` | `VARCHAR(4096)` |  Canonical URL of the hierarchy node | |
 | `type` | `VARCHAR(64)` | Type of the hierarchy node | `Course` |

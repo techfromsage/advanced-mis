@@ -18,7 +18,7 @@ body_class: lists
 ### Columns
 
 | Column Name | Datatype | Description | Example
-| --- | --- | --- | --- | --- |
+| --- | --- | --- | --- | 
 | `url` | `VARCHAR(4096)` | Canonical URL of the reading list |
 | `list_guid` | `VARCHAR(4096)` | Globally Unique ID for the reading list. This should be used for joining to other data. | `DE53F159-8AE9-F8D4-6518-263DED7D56E9` |
 | `title` | `VARCHAR(4096)` | Reading list title |

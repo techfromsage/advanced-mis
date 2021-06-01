@@ -18,7 +18,7 @@ body_class: items
 ### Columns
 
 | Column Name | Datatype | Description  | Example
-| --- | --- | --- | ---------- | --- |
+| --- | --- | --- | ---------- |
 | `status` | `VARCHAR(255)` | Status of the list this item appears on. Permitted values `Draft`, `Published`, `Published with Unpublished Changes` | `Draft` |
 | `time_period` | `VARCHAR(4096)` | Textual name of time period of the list this item appears on | `Autumn Term 2018` |
 | `list_url` | `VARCHAR(255)` | Canonical URL of the reading list  |  |
