@@ -1,35 +1,34 @@
 ---
 layout: site
-title: ISBN Link
-body_class: isbn-link
+title: Elevate User
+body_class: elevate-users
 ---
 
 <dl>
   <dt>Entity</dt>
-  <dd>ISBN Link</dd>
+  <dd>Elevate Users</dd>
 
   <dt>Description</dt>
-  <dd>A mapping between an ISBN like identifier and the items the identifier appears on. Also provides some extra filter columns for list status, digitisation presence and item importance.</dd>
+  <dd>Users who have logged in to Talis Elevate, and when they last did this.</dd>
 
   <dt>Database location</dt>
-  <dd><code>public.f_rl_isbn_link</code></dd>
+  <dd><code>public.f_elevate_users</code></dd>
 </dl>
 
-This view contains a mapping from an ISBN to the Item it relates to, and includes some additional convenience columns with details of the item in question.
-
-You can use this view as a lookup table to find all items with some given ISBN. So if you have a set of data from a EBA or PDA supplier, you can lookup each of those in this table and find out which items might need some metadata changes. 
+This view contains all users who have logged in to Talis Elevate, and includes their last login date. It also includes how many times they have logged in so that you can find users who are engaging with Talis Elevate often.
 
 ### Columns
 
 | Column Name | Datatype | Description  | Example
-| --- | --- | --- | ---------- | --- |
-| `isbn` | `VARCHAR(255)` | an ISBN10, ISBN13, ISSN or eISSN | `012345678X` |
-| `item_url` | `VARCHAR(4096)` | Canonical URL of the item  |  |
-| `importance` | `VARCHAR(255)` | The importance of the item | `Essential` |
-| `digitisation_id` | `VARCHAR(255)` | The request id of the digitisation | `54321` |
-| `digitisation_status` | `VARCHAR(32)` | Whether the digitisation is `LIVE` or `EXPIRED` etc. | `LIVE` |
-| `list_url` | `VARCHAR(4096)` | Canonical URL of the item | `DE53F159-8AE9-F8D4-6518-263DED7D56E9` |
-| `list_status` | `VARCHAR(255)` | The status of the list, `Published`, `Archived`, etc | `Draft` |
-| `tenant` | `VARCHAR(255)` | The thenant short code | `broadminster` |
+| --- | --- | --- | ---------- | 
+| `talis_guid`|`character varying` | Talis user ID to link to other non-reading list Talis data | myoVK7wfosXXWlw |
+| `full_name`|`VARCHAR(255)` | The user's full name | `Joe F. Bloggs` |
+| `login_count`|`INTEGER` | The number of times this user has logged in | `64` |
+| `last_login`|`wTIMESTAMP` | Time the user last logged in. Timezone is UTC | `2016-01-12 00:00:00.0` |
+| `inst`|`character varying` | The tenant short code | `broadminster` | |
+| `year_last_login`|`INTEGER` | Year of when the user last logged in | `2018` |
+| `month_last_login`|`INTEGER` | Month of when the user last logged in, values 1-12 | `12` |
+| `week_last_login`|`INTEGER` | ISO 8601 week of when the user last logged in, note Monday is the start of the ISO 8601 week, values 1-53 | `52` |
+| `dow_last_login`|`INTEGER` | Day of week of when the user last logged in created, values 0-6, Sunday is 0 | `5` |
 
 **WARNING:** The data dictionary is subject to change. For that reason always refer to column names directly in your SQL statements, not column positions.
