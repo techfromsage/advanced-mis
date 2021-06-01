@@ -35,16 +35,6 @@ Refer to the data dictionary topics below to discover how to use the different e
 | [Elevate Users]({{ site.baseurl }}/topics/elevate-users.html) | Talis Elevate users | `f_elevate_users`
 | [Elevate Modules]({{ site.baseurl }}/topics/elevate-modules.html) | Talis Elevate modules | `f_elevate_modules`
 | [Elevate Resources]({{ site.baseurl }}/topics/elevate-resources.html) | Talis Elevate resources | `f_elevate_resources`
-| [Elevate Module Resource Links]({{ site.baseurl }}/topics/elevate-module-resource-link.html) | Linking table between Talis Elevate Modules and resources | `f_elevate_module_resource_links`
+| [Elevate Module Resource Links]({{ site.baseurl }}/topics/elevate-module-resource-links.html) | Linking table between Talis Elevate modules and resources | `f_elevate_module_resource_links`
 
-**WARNING:** Because this is a beta service, the data dictionary is subject to change. For that reason always refer to column names directly in your SQL statements, not column positions.
-
-### TODO list
-
-This service is in beta. The current todo list for Application Data is:
-
-* Provide a fact table for hierarchy data
-* For fact tables `f_rl_*`, provide `TIMESTAMP` columns for exploded dates
-* For fact tables `f_dc_*`, provide exploded dates for existing `TIMESTAMP` columns
-* Complete documentation
-
+**WARNING:** The data dictionary is subject to change. For that reason always refer to column names directly in your SQL statements, not column positions.

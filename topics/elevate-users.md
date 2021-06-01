@@ -1,6 +1,6 @@
 ---
 layout: site
-title: Elevate User
+title: Elevate Users
 body_class: elevate-users
 ---
 
@@ -21,14 +21,14 @@ This view contains all users who have logged in to Talis Elevate, and includes t
 
 | Column Name | Datatype | Description  | Example
 | --- | --- | --- | ---------- | 
-| `talis_guid`|`character varying` | Talis user ID to link to other non-reading list Talis data | myoVK7wfosXXWlw |
-| `full_name`|`VARCHAR(255)` | The user's full name | `Joe F. Bloggs` |
-| `login_count`|`INTEGER` | The number of times this user has logged in | `64` |
-| `last_login`|`wTIMESTAMP` | Time the user last logged in. Timezone is UTC | `2016-01-12 00:00:00.0` |
-| `inst`|`character varying` | The tenant short code | `broadminster` | |
-| `year_last_login`|`INTEGER` | Year of when the user last logged in | `2018` |
-| `month_last_login`|`INTEGER` | Month of when the user last logged in, values 1-12 | `12` |
-| `week_last_login`|`INTEGER` | ISO 8601 week of when the user last logged in, note Monday is the start of the ISO 8601 week, values 1-53 | `52` |
-| `dow_last_login`|`INTEGER` | Day of week of when the user last logged in created, values 0-6, Sunday is 0 | `5` |
+| `talis_guid` | `VARCHAR(64)` | Talis user ID to link to other Talis data such as events | `myoVK7wfosXXWlw` |
+| `full_name` | `VARCHAR(255)` | The user's full name | `Joe F. Bloggs` |
+| `login_count` | `INTEGER` | The number of times this user has logged in | `64` |
+| `last_login` | `TIMESTAMP` | Time the user last logged in. Timezone is UTC | `2016-01-12 00:00:00.0` |
+| `inst` | `VARCHAR(32)` | The tenant short code | `broadminster` |
+| `year_last_login` | `INTEGER` | Year of when the user last logged in | `2018` |
+| `month_last_login` | `INTEGER` | Month of when the user last logged in, values 1-12 | `12` |
+| `week_last_login` | `INTEGER` | ISO 8601 week of when the user last logged in, note Monday is the start of the ISO 8601 week, values 1-53 | `52` |
+| `dow_last_login` | `INTEGER` | Day of week of when the user last logged in created, values 0-6, Sunday is 0 | `5` |
 
 **WARNING:** The data dictionary is subject to change. For that reason always refer to column names directly in your SQL statements, not column positions.
