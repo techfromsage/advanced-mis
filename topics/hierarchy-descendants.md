@@ -35,7 +35,7 @@ and that this view only supports up to five levels of depth:
 ### Columns
 
 | Column Name | Datatype | Description  | Example
-| --- | --- | --- | ---------- | --- |
+| --- | --- | --- | ---------- | 
 | `url` | `VARCHAR(4096)` | Canonical URL of the hierarchy node |  |
 | `descendant_url` | `VARCHAR(4096)` | Canonical URL of the descendant node  |  |
 

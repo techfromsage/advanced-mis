@@ -22,7 +22,7 @@ You can use this view as a lookup table to find all items with some given ISBN. 
 ### Columns
 
 | Column Name | Datatype | Description  | Example
-| --- | --- | --- | ---------- | --- |
+| --- | --- | --- | ---------- | 
 | `isbn` | `VARCHAR(255)` | an ISBN10, ISBN13, ISSN or eISSN | `012345678X` |
 | `item_url` | `VARCHAR(4096)` | Canonical URL of the item  |  |
 | `importance` | `VARCHAR(255)` | The importance of the item | `Essential` |
