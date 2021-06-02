@@ -8,7 +8,7 @@ body_class: pushing
 [Event Data]({{ site.baseurl }}/topics/event-data.html) is aggregated either hourly or daily depending on which `f_event_timeseries...` table it is going into.
 
 ### Application Data
-[Application Data]({{ site.baseurl }}/topics/app-data.html) is updated automatically for you and pushed into Advanced MIS, once per week.
+[Application Data]({{ site.baseurl }}/topics/app-data.html) is updated automatically for you and pushed into Advanced MIS. Different products may have slightly different push schedules.
 
 #### Reading Lists
 Data from Reading Lists is pushed to Advanced MIS in the early hours (GMT) of Sunday morning.
