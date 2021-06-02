@@ -10,10 +10,10 @@ body_class: pushing
 ### Application data
 [Application Data]({{ site.baseurl }}/topics/app-data.html) is updated automatically for you and pushed into Advanced MIS, once per week.
 
-#### Reading lists
-Data from reading lists is pushed to Advanced MIS in the Early hours (GMT) of Sunday morning.
+#### Reading Lists
+Data from Reading Lists is pushed to Advanced MIS in the early hours (GMT) of Sunday morning.
 
-To update application data For reading lists you can push it from Aspire manually. Log into Aspire as a System Administrator, and in the "Admin" menu choose "Advanced MIS". From here you will be able to invoke the "Push data now" option.
+To update application data for Reading Lists you can push it from Aspire manually. Log into Aspire as a System Administrator, and in the "Admin" menu choose "Advanced MIS". From here you will be able to invoke the "Push data now" option.
 
 ![Aspire Advanced MIS menu screenshot]({{ site.baseurl }}/images/topics/pushing/aspire-menu.jpg)
 

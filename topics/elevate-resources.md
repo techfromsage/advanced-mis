@@ -22,7 +22,7 @@ body_class: elevate-resources
 | Column Name | Datatype | Description  | Example
 | --- | --- | --- | ---------- | 
 | `resource_id` | `VARCHAR(64)` | The Talis ID of the resource. Can be used to link this view with events. | `fhf7jfohifnfwwoif` |
-| `title` | `VARCHAR(255)` | The title of the resource| `A Diagram of the spleen` |
+| `title` | `VARCHAR(255)` | The title of the resource | `A Diagram of the spleen` |
 | `format` | `VARCHAR(64)` | The format of the resource | `video` |
 | `source` | `VARCHAR(64)` | The source of the resource | `ingested` |
 | `uploaded_by` | `VARCHAR(64)` | Talis user ID of the person uploading the resource | `myoVK7wfosXXWlw` |
