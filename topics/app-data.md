@@ -19,6 +19,12 @@ Part of the refactoring for management reporting involves:
 * Adding external identifiers so data can be linked to other sources
 * Calculating new lookup tables based on the existing data. For example a view that links all isbns with the item it appears on.
 
+## Diagram
+
+There is is a (rather large!!) [entity relationship diagram]({{ site.baseurl }}/topics/entity-relationships.html) available.
+
+## Details
+
 Refer to the data dictionary topics below to discover how to use the different entities in the warehouse:
 
 | Entity  | Description | Fact Table Name |
