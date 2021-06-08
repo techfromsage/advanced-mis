@@ -25,7 +25,7 @@ Labels on relationships indicate where there is a reliance on a particular key b
 
 ## Attributes
 
-We have not listed all attributes of a table, only those that can be used as either primary of foreign keys.
+We have not listed all attributes of a table, only those that can be used as either primary or foreign keys.
 
 <div class="mermaid">
 erDiagram
