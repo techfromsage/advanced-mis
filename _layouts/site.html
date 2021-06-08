@@ -18,6 +18,11 @@
   <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
   <link href="{{ site.baseurl }}/stylesheets/fontawesome-all.min.css" rel="stylesheet">
+
+  {% if page.mermaid %}
+    {% include mermaid.html %}
+  {% endif %}
+
 </head>
 
 <body class="{% if page.body_class %}{{ page.body_class }}{% endif %}">
