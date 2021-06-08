@@ -1,0 +1,22 @@
+<script type="text/javascript"
+  src="https://unpkg.com/mermaid@8.10.2/dist/mermaid.min.js">
+</script>
+<script type="text/javascript" 
+    src="https://unpkg.com/jquery@3.6.0/dist/jquery.min.js">
+</script>
+
+<script>
+jQuery(document).ready(function() {
+    mermaid.initialize({
+        theme: 'base',
+        themeVariables: {
+            primaryColor: '#aad0d0', // Talis Grey
+            secondaryColor: '#ff4d96', // Talis Pink
+            fontFamily: '"open sans", verdana, arial',
+        },
+        er: {
+            useMaxWidth: false
+        }
+    });
+});
+</script>
