@@ -34,7 +34,7 @@ body_class: digitisations
 | `rolled_over_from` | `INTEGER` | If this request was created as part of a roll over, the identifier of the original request | `1` |
 | `rolled_over_to` | `INTEGER` | If this request was itself rolled over, the identifier of the newly created rolled over request | `3` |
 | `date_copied` | `TIMESTAMP` | Date that the copy was added to the request | `2017-08-24 00:00:00` |
-| `date_released` | `TIMESTAMP` | The date the copy was made live to the user. Usually request start date or latest bundle creation date | `2017-08-24 00:00:00` |
+| `date_released` | `TIMESTAMP` | Course start date or the date the request was made available to students, if after the course start date | `2017-08-24 00:00:00` |
 | `original_format` | `VARCHAR(64)` | Format of the original item, permitted values `print`, `digital` | `print` |
 | `requester_name` | `VARCHAR(255)` | Name of the person making the request |  |
 | `requester_email` | `VARCHAR(255)` | Email of the person making the request | `52` |
