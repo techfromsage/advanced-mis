@@ -210,10 +210,12 @@ pre {
 pre {
   padding: 8px 15px;
   overflow-x: auto;
-
-  background: #f8f8f8;
   border: 1px solid #e5e5e5;
   border-radius: 5px;
+}
+
+pre, code.hljs {
+  background: #f8f8f8;
 }
 
 table {
