@@ -23,6 +23,15 @@
     {% include mermaid.html %}
   {% endif %}
 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/styles/a11y-light.min.css" integrity="sha512-WDk6RzwygsN9KecRHAfm9HTN87LQjqdygDmkHSJxVkVI7ErCZ8ZWxP6T8RvBujY1n2/E4Ac+bn2ChXnp5rnnHA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/highlight.min.js" integrity="sha512-z+/WWfyD5tccCukM4VvONpEtLmbAm5LDu7eKiyMQJ9m7OfPEDL7gENyDRL3Yfe8XAuGsS2fS4xSMnl6d30kqGQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script>
+    // clone the sql language highlighting and register as 'redshift'
+    let sql = hljs.getLanguage("sql");
+    hljs.registerLanguage("redshift", sql.rawDefinition);
+    hljs.highlightAll();
+  </script>
+
 </head>
 
 <body class="{% if page.body_class %}{{ page.body_class }}{% endif %}">
