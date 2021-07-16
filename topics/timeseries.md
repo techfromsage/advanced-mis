@@ -397,7 +397,7 @@ group by view_mode, action, sub_action;
 | `view_draft`|   |   |The user was logged in and could see the draft but not edit it (usually faculty or library staff) |
 | `view_as_student` |   |   |The user was logged in and was an editor who chose to view the list as a student (usually faculty or library staff) |
 |   | `add_to_bookmarks` |   | A click on the 'add to my bookmarks' menu entry|
-|   |`export_citation` |   | A click on the export citeation menu entry |
+|   |`export_citation` |   | A click on the export citation menu entry |
 |   | `show_share_item` |   | A click on the share item menu entry|
 |   | `personal_note` | has sub actions | Personal notes are added by students and only visible to the user adding the note |
 |   | | `update`| add or update a personal note| 
