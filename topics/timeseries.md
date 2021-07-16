@@ -265,8 +265,31 @@ This event also allows you to identify whether the user followed a link to the l
 | --- | --- | --- |
 | `dimension_1` | The list's Globally Unique ID, namespaced by the tenancy short code | `broadminster:DE53F159-8AE9-F8D4-6518-263DED7D56E9` | 
 | `dimension_2` | The user's entry point to the list - could be a item, section or the whole list. The ID of the entry point is namespaced with `item`, `section` or `list` |  `list:DE53F159-8AE9-F8D4-6518-263DED7D56E9`<br/> or <br/>`item:FA53F159-1DG9-G2D4-7812-163AED7D56R9`<br/> or <br/>`section:AA93F159-1AG9-A2D8-7812-163AED7A58A1` |
-| `dimension_3` | The user's mode (either `view`, `view_draft`, `edit` or `view_as_student`, the latter being an editor viewing the list as a student) combined with the launch method (either `direct` or `lti`) | `view:lti` |
+| `dimension_3` | The user's mode and launch methods. __See below for possible values__ | `view:lti` |
 | `dimension_4` | User's Globally Unique ID, can be joined to [`public.f_rl_users.talis_guid`]({{ site.baseurl }}/topics/users.html). | `myoVK7wfosXXWlw` |
+
+#### Possible values of `list.entry_point dimension_3`
+The value can be split on a colon (`:`) into parts. Each part has a different meaning. In an SQL query you might use these values like this:
+
+```redshift
+select
+    split_part(dimension_3, ':', 1) as view_mode,
+    split_part(dimension_3, ':', 2) as launch_method,
+    sum(event_count)
+from f_event_timeseries_1hr
+where event_class = 'list.entry_point'
+group by view_mode, launch_method;
+```
+
+| Part 1: mode | Part 2: Launch method | Meaning |
+| --- | --- | --- |
+|  view || The user was not logged in or was logged in but not a list editor (usually a student) |
+|  edit || The user was logged in as a list editor (usually faculty or library staff) |
+|  view_draft || The user was logged in and could see the draft but not edit it (usually faculty or library staff) |
+|  view_as_student || The user was logged in and was an editor who chose to view the list as a student (usually faculty or library staff) |
+| | lti | The request came from the LTI integration with the learning system |
+| | direct | The request came directly |
+
 
 <br/>
 <a name="list-view"></a>
@@ -291,9 +314,48 @@ This event is designed to give detail about the types of edit events happening t
 | Column | Description | Examples |
 | --- | --- | --- |
 | `dimension_1` | The tenancy short code |`broadminster` | 
-| `dimension_2` | The edit action. A colon separates the action target from the action type. You can read this as "this thing had an edit action applied"| `item:create` |
+| `dimension_2` | The edit action. A colon separates the action target from the action type. You can read this as "this thing had an edit action applied". __Possible values are listed below__ | `item:create` |
 | `dimension_3` | List's Globally Unique ID, can be joined to [`public.f_rl_lists.guid`]({{ site.baseurl }}/topics/lists.html)   | `DE53F159-8AE9-F8D4-6518-263DED7D56E9` 
 | `dimension_4` | User's Globally Unique ID, can be joined to [`public.f_rl_users.talis_guid`]({{ site.baseurl }}/topics/users.html). | `myoVK7wfosXXWlw` |
+
+#### Possible values of `list.edit dimension_2`
+The value can be split on a colon (`:`) into parts. Each part has a different meaning. In an SQL query you might use these values like this:
+
+```redshift
+select
+    split_part(dimension_2, ':', 1) as thing,
+    split_part(dimension_2, ':', 2) as edit_action,
+    sum(event_count)
+from f_event_timeseries_1hr
+where event_class = 'list.edit'
+group by thing, edit_action;
+```
+
+| Part 1: thing | Part 2: edit actions | Meaning |
+| --- | --- | --- |
+| `item` | | The item was edited |
+| | `create_student_note` | Add a student note to the item |
+| | `update_student_note` | Update the student note on the item |
+| | `delete_student_note` | Delete a student note|
+| | `create_importance` | Add an importance |
+| | `update_importance` | Update the importance of the item|
+| | `delete_importance` | Delete the importance on an item |
+| | `move` | Move the item |
+| | `request_digitisation` | Click on the request digitisation option |
+| | `delete` | Delete the item |
+| | `create_library_note` | Create a library note |
+| | `update_library_note` | Update the library note |
+| | `delete_library_note` | Delete a library note |
+| | `create` | Create an item |
+| | `update_paragraph` | Update the paragraph note|
+| `list` | | The list was edited |
+| | `update_details` | update the details of the list |
+| `section` | | The section was edited |
+| | `create` | Create a section|
+| | `update` | Update a section|
+| | `delete` | Delete a section|
+| | `move` | Move a section|
+
 
 <br/>
 <a name="list-item-click"></a>
@@ -310,8 +372,52 @@ This should be seen as a expression of desire to do one of the click actions and
 | --- | --- | --- |
 | `dimension_1` | The list's Globally Unique ID, namespaced by the tenancy short code | `broadminster:DE53F159-8AE9-F8D4-6518-263DED7D56E9` | 
 | `dimension_2` | The item's Globally Unique ID | `FA53F159-1DG9-G2D4-7812-163AED7D56A9` |
-| `dimension_3` | The nature of the interaction, made up of three components - the user's mode, the action type and optionally, an action subtype. Mode is either `view`, `view_draft`, `edit` or `view_as_student`. Action types are one of `add_to_bookmarks`, `export_citation`, `show_share_item`, `personal_note`, `external_link`, `reading_intention` or `toggle_detail`. Sub types are relevant for `external_link` (`view_online_button`, `bookstore `, `content`, `library_catalogue`, `preview`, `resolver`), `reading_intention` (`undecided`, `plan_to_consume`, `currently_consuming`, `have_consumed`, `decided_not_to_consume`) and `toggle_detail` (`expand` and `collapse`) | `view:add_to_bookmarks`<br> or <br>`view:toggle_detail:expand`<br> or <br>`view_draft:external_link:preview` |
+| `dimension_3` | The nature of the interaction, made up of three components - the user's mode, the action type and optionally, an action subtype. __See below for possible values__ | `view:add_to_bookmarks`<br> or <br>`view:toggle_detail:expand`<br> or <br>`view_draft:external_link:preview` |
 | `dimension_4` | User's Globally Unique ID, can be joined to [`public.f_rl_users.talis_guid`]({{ site.baseurl }}/topics/users.html). | `myoVK7wfosXXWlw` |
+
+#### Possible values of `list.item.click dimension_3`
+
+The value can be split on a colon (`:`) into parts. Each part has a different meaning. In SQL you might use it in a query like this:
+
+```redshift
+select
+   split_part(dimension_3, ':', 1) as view_mode,
+   split_part(dimension_3, ':', 2) as action,
+   split_part(dimension_3, ':', 3) as sub_action,
+   sum(event_count)
+from f_event_timeseries_1hr
+where event_class = 'list.item.click'
+group by view_mode, action, sub_action;
+```
+
+| Part 1: mode  | Part 2: Action | Part 3: Sub action | Meaning |
+|:---|:---|:---|:---|
+| `view`|   |   | The user was not logged in or was logged in but not a list editor (usually a student) |
+| `edit`|   |   | The user was logged in as a list editor (usually faculty or library staff) |
+| `view_draft`|   |   |The user was logged in and could see the draft but not edit it (usually faculty or library staff) |
+| `view_as_student` |   |   |The user was logged in and was an editor who chose to view the list as a student (usually faculty or library staff) |
+|   | `add_to_bookmarks` |   | A click on the 'add to my bookmarks' menu entry|
+|   |`export_citation` |   | A click on the export citation menu entry |
+|   | `show_share_item` |   | A click on the share item menu entry|
+|   | `personal_note` | has sub actions | Personal notes are added by students and only visible to the user adding the note |
+|   | | `update`| add or update a personal note| 
+|   | | `delete`| delete a personal note| 
+|   | `external_link` | has sub actions| Clicks on links that will take you out of the reading list to an external resource |
+|   | | `view_online_button`| A click on the _view online_ button. This will be whichever link has been selected for that button | 
+|   | | `bookstore ` | A click on a link to a bookstore |
+|   | | `content`| A click on a link to a digitisation (scan) |
+|   | | `library_catalogue`| A click on a link to the library catalogue |
+|   | | `preview` | A click on a link to Google Preview |
+|   | | `resolver` | A click on a link to an OpenURL resolver|
+|   | `reading_intention` | has sub actions | A click on a reading intention button |
+|   | | `undecided` | Chose 'undecided' from the menu |
+|   | | `plan_to_consume` | Chose 'Will read' from the menu |
+|   | | `have_consumed` | Chose 'Have read' from the menu |
+|   | | `decided_not_to_consume` | chose 'won't read' from the menu |
+|   | | `currently_consuming` | Chose 'reading now' from the menu |
+|   | `toggle_detail` | has sub actions | A click on the item title to view expanded details |
+|   | | `expand` | A click to expand the item details|
+|   | | `collapse` | A click to collapse the item details|
 
 <br/>
 <a name="list-item-view"></a>
