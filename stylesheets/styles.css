@@ -1,7 +1,17 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600,300,700);
 
+:root {
+  --brand-primary: #017d87;
+  --brand-accent: #005d64;
+}
+
 * {
   box-sizing: border-box;
+}
+
+::selection {
+  background: var(--brand-accent);
+  color: #ffffff;
 }
 
 body {
@@ -10,8 +20,8 @@ body {
   margin: 0 auto;
 
   font: 14px "Open Sans", "Helvetica Neue", Arial, sans-serif;
-  font-weight: 300;
-  color: #5e5e5e;
+  font-weight: 400;
+  color: #495057;
 }
 
 header {
@@ -20,8 +30,7 @@ header {
 }
 
 .container {
-  display: -webkit-flex;
-  display:         flex;
+  display: flex;
 
   flex-direction: column;
 }
@@ -31,8 +40,7 @@ header {
   padding-top: 3em;
   padding-bottom: 3em;
 
-  -webkit-flex: 1;
-          flex: 1;
+  flex: 1;
 }
 
 .brand {
@@ -41,6 +49,7 @@ header {
   background-image: url("../images/logo.svg");
   background-position: 0 45%;
   background-repeat: no-repeat;
+  background-size: 127px 53px;
 }
 
 .site-title,
@@ -103,7 +112,7 @@ h3,
 h4,
 h5,
 h6 {
-  color: #5e5e5e;
+  color: #000;
 }
 
 h1,
@@ -174,7 +183,7 @@ pre {
 
 a {
   font-weight: 400;
-  color: #017d87;
+  color: var(--brand-primary);
   text-decoration: none;
 }
 
@@ -188,7 +197,7 @@ a small {
   margin-top: -0.6em;
 
   font-size: 11px;
-  color: #017d87;
+  color: var(--brand-primary);
 }
 
 blockquote {
@@ -197,25 +206,37 @@ blockquote {
 
   font-style: italic;
 
-  border-left: 1px solid #e5e5e5;
+  border-left: 1px solid #e9ecef;
 }
 
 code,
 pre {
-  font-family: Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal;
+  font-family: Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal, monospace;
   font-size: 12px;
-  color: #333;
+  color: #000;
+}
+
+code {
+  padding: 2px 4px;
+  font-size: 90%;
+  background-color: #f8f9fa;
+  border-radius: 3px;
+}
+
+pre code {
+  padding: 0;
+  font-size: 100%;
+  background-color: transparent;
+  border-radius: 0;
 }
 
 pre {
-  padding: 8px 15px;
+  padding: 8px 10px;
   overflow-x: auto;
-  border: 1px solid #e5e5e5;
-  border-radius: 5px;
-}
 
-pre, code.hljs {
-  background: #f8f8f8;
+  background: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 5px;
 }
 
 table {
@@ -230,11 +251,11 @@ td {
 
   text-align: left;
 
-  border-bottom: 1px solid #e5e5e5;
+  border-bottom: 1px solid #e9ecef;
 }
 
 th {
-  color: #444;
+  color: #343a40;
 }
 
 td.icon {
@@ -247,7 +268,7 @@ td.build-number {
 
 dt {
   font-weight: 700;
-  color: #444;
+  color: #343a40;
 }
 
 img {
@@ -261,7 +282,7 @@ nav ul {
 }
 nav ul li.active a {
   font-weight: 600;
-  color: #5e5e5e;
+  color: #495057;
 }
 nav ul > ul {
   margin-bottom: 0;
@@ -285,7 +306,7 @@ footer nav {
 
 strong {
   font-weight: 700;
-  color: #222;
+  color: #212529;
 }
 
 small {
@@ -296,7 +317,7 @@ hr {
   height: 1px;
   margin: 0 0 20px;
 
-  background: #e5e5e5;
+  background: #e9ecef;
   border: 0;
 }
 
@@ -308,13 +329,16 @@ hr {
 .footnotes ol {
   padding-top: 2em;
 
-  border-top: 1px solid #e5e5e5;
+  border-top: 1px solid #e9ecef;
+}
+.footnotes p {
+  margin-bottom: 10px;
 }
 
 abbr {
   cursor: help;
 
-  border-bottom: 1px dotted #e5e5e5;
+  border-bottom: 1px dotted #e9ecef;
 }
 
 .clearfix:before,
@@ -334,7 +358,6 @@ abbr {
   background-color: #c5197d;
   background-image: none;
 
-  -webkit-box-shadown: none;
   box-shadow: none;
 }
 
@@ -365,14 +388,12 @@ abbr {
   }
 
   nav {
-    -webkit-flex: 0 0 25%;
-            flex: 0 0 25%;
+    flex: 0 0 25%;
     order: -1;
   }
 
   .container {
-    -webkit-flex-direction: row;
-            flex-direction: row;
+    flex-direction: row;
   }
 
   .content {
@@ -413,7 +434,7 @@ abbr {
     padding: 0.4in;
 
     font-size: 12pt;
-    color: #444;
+    color: #343a40;
   }
 }
 
