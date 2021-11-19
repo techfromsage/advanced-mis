@@ -26,6 +26,7 @@ This view contains all users who have logged in to Talis Elevate, and includes t
 | `login_count` | `INTEGER` | The number of times this user has logged in | `64` |
 | `last_login` | `TIMESTAMP` | Time the user last logged in. Timezone is UTC | `2016-01-12 00:00:00.0` |
 | `inst` | `VARCHAR(32)` | The tenant short code | `broadminster` |
+| `createdVia` | `VARCHAR(32)` | The method by which the user was created | `colleagueInvite` |
 | `year_last_login` | `INTEGER` | Year of when the user last logged in | `2018` |
 | `month_last_login` | `INTEGER` | Month of when the user last logged in, values 1-12 | `12` |
 | `week_last_login` | `INTEGER` | ISO 8601 week of when the user last logged in, note Monday is the start of the ISO 8601 week, values 1-53 | `52` |
