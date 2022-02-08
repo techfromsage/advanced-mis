@@ -20,7 +20,7 @@ body_class: elevate-invitations
 
 | Column Name | Datatype | Description  | Example
 | --- | --- | --- | ---------- | 
-| `invitation_id` | `VARCHAR(64)` | The Talis ID of the invitation. Can be used to link this view with events. | `6200eae0790c89002bac4bd3` |
+| `invitation_id` | `VARCHAR(64)` | The Talis ID of the invitation. | `6200eae0790c89002bac4bd3` |
 | `first_name`|`VARCHAR(255)` | The first name of the person who was invited, only populated for invitations created by Talis staff | `Anne` | 
 | `surname`|`VARCHAR(255)` | The surname of the person who was invited, only populated for invitations created by Talis staff | `Example` | 
 | `date_created` | `TIMESTAMP` | Date created. Timezone is UTC | `2016-01-12 00:00:00.0` |
