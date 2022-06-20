@@ -32,6 +32,6 @@ body_class: elevate-resources
 | `month_date_created` | `INTEGER` | Month of date created | `12` |
 | `week_date_created` | `INTEGER` | ISO 8601 week, note Monday is the start of the ISO 8601 week, values 1-53 | `52` |
 | `dow_date_created` | `INTEGER` | Day of week, values 0-6, Sunday is 0 | `5` |
-| `isbn` | `VARCHAR(13)`  | The ISBN of the resource | `978-0-979-829-0-0` |
+| `isbn` | `VARCHAR(13)`  | The ISBN of the resource | `978097982900` |
 
 **WARNING:** The data dictionary is subject to change. For that reason always refer to column names directly in your SQL statements, not column positions.
