@@ -50,8 +50,6 @@ The number of views on a resource in a defined period.
 
 Views are defined as any view of a resource by a user who is not a contributor. This is essentially student views of a resource.
 
-This metric
-
 ```redshift
 select sum(event_count) as num_views
 from f_event_timeseries_24hr
@@ -115,6 +113,8 @@ There are different definitions of 'using' and you need to be careful how you ar
 
 Use could be defined as a resource having been viewed by a student, therefore it must have been uploaded at some point, but not necessarily in the reporting period. This is different to counting use as having uploaded a document as that may have been uploaded in a previous reporting period, but still have use in this one.
 
+In both cases, in order to count the academics we need to be looking at the resources that were used in order to work out who uploaded them.
+
 Here we give two variations of a query which use these two definitions of `using Talis Elevate`.
 
 ```redshift
@@ -143,3 +143,4 @@ group by u.role
 Possible variations:
 
 - You might consider yet another alternative definition of active usage as being academics that are encouraging comments on their uploaded documents.  You could adjust the first query to use the `player.annotate.createannotation` event class (or its sub classes for the different annotation types) to only look at those academics with student interactions on their resources.
+- You could pull additional detail from the `f_elevate_resources` view to allow further grouping of usage - for example, grouping by `format` (video, document, etc.) would tell you which academics were favouring which resource formats, or which formats students found most useful.
