@@ -1,9 +1,9 @@
 ---
-title: Metrics
+title: Talis Aspire Metrics
 layout: site
 body_class: recipe
 keywords: reading lists, metrics, dashboards
-description: Some high level metrics for use in a dashboard
+description: Some high level Talis Aspire metrics for use in a dashboard
 ---
 
 ## Background
@@ -18,15 +18,15 @@ After using the queries in this recipe you will be able to add some headline met
 
 These are the metrics we will explore. We'll detail what it is we are looking for in the data that allows us to tell these things. We'll also explain what the metrics might mean and why you might be interested in them.
 
-- [Number of student views of a lists](#number-of-student-views-of-lists)
-- [Interactions with a list by a student](#staff-and-student-interactions-with-lists)
-- [Read Interactions with a list by staff](#staff-and-student-interactions-with-lists)
-- [Edits of a list by academics](#edits-of-a-list-by-academics-or-library-staff)
-- [Edits of a list by librarby staff](#edits-of-a-list-by-academics-or-library-staff)
-- [Number of published lists](#number-of-published-lists)
-- [Number of visists to lists that come via LTI](#number-of-visits-to-lists-via-lti)
-- [Number of clicks on external resources](#number-of-clicks-on-external-resources)
-- [Number of students using reading intentions.](#number-of-students-using-reading-intentions)
+- [Background](#background)
+- [The metrics](#the-metrics)
+  - [Number of student views of lists](#number-of-student-views-of-lists)
+  - [Staff and Student Interactions with lists](#staff-and-student-interactions-with-lists)
+  - [Edits of a list by Academics or Library Staff](#edits-of-a-list-by-academics-or-library-staff)
+  - [Number of published lists](#number-of-published-lists)
+  - [Number of visits to lists via LTI](#number-of-visits-to-lists-via-lti)
+  - [Number of clicks on external resources](#number-of-clicks-on-external-resources)
+  - [Number of students using reading intentions](#number-of-students-using-reading-intentions)
 
 ### Number of student views of lists
 
