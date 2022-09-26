@@ -10,10 +10,10 @@ significantly, which is useful for dashboarding and trend analysis.
 
 There are several different views representing different sliding window lengths and history:
 
-1. `f_event_timeseries_1hr`
+1. `f_event_timeseries_1hr` 
     - where the event counts and sums are per hour
-1. `f_event_timeseries_24hr`
-    - where the event counts and sums are per day
+1. `f_event_timeseries_24hr` 
+    - where the event counts and sums are per day 
     - up to 36 months historical data
 1. `f_event_timeseries_24hr_last_3_months`
     - where the event counts and sums are per day
@@ -21,7 +21,7 @@ There are several different views representing different sliding window lengths 
 1. `f_event_timeseries_24hr_last_6_months`
     - where the event counts and sums are per day
     - up to 6 months historical data
-1. `f_event_timeseries_24hr_last_12_months`
+1. `f_event_timeseries_24hr_last_12_months` 
     - where the event counts and sums are per day
     - up to 12 months historical data
 
@@ -84,7 +84,7 @@ This event is emitted when a user has created a bookmark.
 
 ### Events with class `addToList`
 
-This event is emitted when a user has added a bookmark to a list.
+This event is emitted when a user has added a bookmark to a list. 
 
 Take a look at [`list.edit`](#list-edit) which includes additional detail about what has been added to a list and when.
 
@@ -122,6 +122,23 @@ Talis Elevate allows you to upload video or youtube clips, or 'play' pdf files. 
 | `event_sum` | The sum in milliseconds of the time spent playing content for the given dimensions and window | `55212` |
 
 <br/>
+<a name="player-timer-2-contributors"></a>
+
+### Events with class `player.timer.2.contributors`
+
+Talis Elevate allows you to upload video or youtube clips, or 'play' pdf files. This event tracks how long a user, who is not the resource owner, spent viewing some content in the Talis Elevate content player.
+
+A contributor is a user other than the owner of the resource being viewed, and typically a student.
+
+| Column | Description | Example |
+| --- | --- | --- |
+| `dimension_1` | The tenancy short code | `broadminster` |
+| `dimension_2` | The module ID relating to the content being played |
+| `dimension_3` | The resource ID relating to the content being played |
+| `dimension_4` | User's Globally Unique ID, can be joined to [`public.f_rl_users.talis_guid`]({{ site.baseurl }}/topics/users.html). | `myoVK7wfosXXWlw` |
+| `event_sum` | The sum in milliseconds of the time spent playing content for the given dimensions and window | `55212` |
+
+<br/>
 <a name="player-view"></a>
 
 ### Events with class `player.view`
@@ -129,6 +146,22 @@ Talis Elevate allows you to upload video or youtube clips, or 'play' pdf files. 
 A view of a resource by anyone.
 
 `digitisation.view` is also recorded by the Talis Elevate player when the content has originated from Copyright Clearance. This is in addition to `player.view`.
+
+| Column | Description | Example |
+| --- | --- | --- |
+| `dimension_1` | The tenancy short code | `broadminster` |
+| `dimension_2` | The module ID relating to the content being played |
+| `dimension_3` | The resource ID relating to the content being played |
+| `dimension_4` | User's Globally Unique ID, can be joined to [`public.f_rl_users.talis_guid`]({{ site.baseurl }}/topics/users.html). | `myoVK7wfosXXWlw` |
+
+<br/>
+<a name="player-view-contributors"></a>
+
+### Events with class `player.view.contributors`
+
+A view of a resource by a user who is not the resource owner.
+
+A contributor is a user other than the owner of the content being viewed, and typically a student.
 
 | Column | Description | Example |
 | --- | --- | --- |
@@ -184,6 +217,43 @@ A user has replied to a comment on a Talis Elevate player resource.
 | `dimension_4` | User's Globally Unique ID, can be joined to [`public.f_rl_users.talis_guid`]({{ site.baseurl }}/topics/users.html). | `myoVK7wfosXXWlw` |
 
 <br/>
+<a name="modulemanager-timer"></a>
+
+### Events with class `modulemanager.timer`
+
+How long a user with access to the module manager spent in the module manager. This is typically an academic user.
+
+| Column | Description | Example |
+| --- | --- | --- |
+| `dimension_1` | The tenancy short code | `broadminster` |
+| `dimension_2` | The module ID relating to the content being played |
+| `dimension_3` | User's Globally Unique ID, can be joined to [`public.f_rl_users.talis_guid`]({{ site.baseurl }}/topics/users.html). | `myoVK7wfosXXWlw` |
+| `event_sum` | The sum in milliseconds of the time spent in the module manager | `55212` |
+
+<br/>
+<a name="player-profile-complete"></a>
+
+### Events with class `player.profile.complete`
+
+A user has completed filling in their profile.
+
+| Column | Description | Example |
+| --- | --- | --- |
+| `dimension_1` | The tenancy short code | `broadminster` |
+
+<br/>
+<a name="player-search"></a>
+
+### Events with class `player.search`
+
+A user has searched for something.
+
+| Column | Description | Example |
+| --- | --- | --- |
+| `dimension_1` | The tenancy short code | `broadminster` |
+| `dimension_2` | The module ID relating to the content being played |
+| `dimension_3` | The resource ID relating to the content being played |
+| `dimension_4` | User's Globally Unique ID, can be joined to [`public.f_rl_users.talis_guid`]({{ site.baseurl }}/topics/users.html). | `myoVK7wfosXXWlw` |
 
 <a name="list-entry_point"></a>
 
@@ -193,11 +263,11 @@ Only available when using new list view and new list edit from November 2019 onw
 
 Use this event to see whether users are viewing lists directly, or coming through an LTI tool.
 
-This event also allows you to identify whether the user followed a link to the list, section or item. Remember this is the entry point, subsequent clicks by a user are recorded in the `list.item.click` event.
+This event also allows you to identify whether the user followed a link to the list, section or item. Remember this is the entry point, subsequent clicks by a user are recorded in the `list.item.click` event. 
 
 | Column | Description | Examples |
 | --- | --- | --- |
-| `dimension_1` | The list's Globally Unique ID, namespaced by the tenancy short code | `broadminster:DE53F159-8AE9-F8D4-6518-263DED7D56E9` |
+| `dimension_1` | The list's Globally Unique ID, namespaced by the tenancy short code | `broadminster:DE53F159-8AE9-F8D4-6518-263DED7D56E9` | 
 | `dimension_2` | The user's entry point to the list - could be a item, section or the whole list. The ID of the entry point is namespaced with `item`, `section` or `list` |  `list:DE53F159-8AE9-F8D4-6518-263DED7D56E9`<br/> or <br/>`item:FA53F159-1DG9-G2D4-7812-163AED7D56R9`<br/> or <br/>`section:AA93F159-1AG9-A2D8-7812-163AED7A58A1` |
 | `dimension_3` | The user's mode and launch methods. __See below for possible values__ | `view:lti` |
 | `dimension_4` | User's Globally Unique ID, can be joined to [`public.f_rl_users.talis_guid`]({{ site.baseurl }}/topics/users.html). | `myoVK7wfosXXWlw` |
@@ -247,9 +317,9 @@ This event is designed to give detail about the types of edit events happening t
 
 | Column | Description | Examples |
 | --- | --- | --- |
-| `dimension_1` | The tenancy short code |`broadminster` |
+| `dimension_1` | The tenancy short code |`broadminster` | 
 | `dimension_2` | The edit action. A colon separates the action target from the action type. You can read this as "this thing had an edit action applied". __Possible values are listed below__ | `item:create` |
-| `dimension_3` | List's Globally Unique ID, can be joined to [`public.f_rl_lists.guid`]({{ site.baseurl }}/topics/lists.html)   | `DE53F159-8AE9-F8D4-6518-263DED7D56E9`
+| `dimension_3` | List's Globally Unique ID, can be joined to [`public.f_rl_lists.guid`]({{ site.baseurl }}/topics/lists.html)   | `DE53F159-8AE9-F8D4-6518-263DED7D56E9` 
 | `dimension_4` | User's Globally Unique ID, can be joined to [`public.f_rl_users.talis_guid`]({{ site.baseurl }}/topics/users.html). | `myoVK7wfosXXWlw` |
 
 #### Possible values of `list.edit dimension_2`
@@ -304,7 +374,7 @@ This should be seen as a expression of desire to do one of the click actions and
 
 | Column | Description | Examples |
 | --- | --- | --- |
-| `dimension_1` | The list's Globally Unique ID, namespaced by the tenancy short code | `broadminster:DE53F159-8AE9-F8D4-6518-263DED7D56E9` |
+| `dimension_1` | The list's Globally Unique ID, namespaced by the tenancy short code | `broadminster:DE53F159-8AE9-F8D4-6518-263DED7D56E9` | 
 | `dimension_2` | The item's Globally Unique ID | `FA53F159-1DG9-G2D4-7812-163AED7D56A9` |
 | `dimension_3` | The nature of the interaction, made up of three components - the user's mode, the action type and optionally, an action subtype. __See below for possible values__ | `view:add_to_bookmarks`<br> or <br>`view:toggle_detail:expand`<br> or <br>`view_draft:external_link:preview` |
 | `dimension_4` | User's Globally Unique ID, can be joined to [`public.f_rl_users.talis_guid`]({{ site.baseurl }}/topics/users.html). | `myoVK7wfosXXWlw` |
@@ -334,10 +404,10 @@ group by view_mode, action, sub_action;
 |   |`export_citation` |   | A click on the export citation menu entry |
 |   | `show_share_item` |   | A click on the share item menu entry|
 |   | `personal_note` | has sub actions | Personal notes are added by students and only visible to the user adding the note |
-|   | | `update`| add or update a personal note|
-|   | | `delete`| delete a personal note|
+|   | | `update`| add or update a personal note| 
+|   | | `delete`| delete a personal note| 
 |   | `external_link` | has sub actions| Clicks on links that will take you out of the reading list to an external resource |
-|   | | `view_online_button`| A click on the _view online_ button. This will be whichever link has been selected for that button |
+|   | | `view_online_button`| A click on the _view online_ button. This will be whichever link has been selected for that button | 
 |   | | `bookstore ` | A click on a link to a bookstore |
 |   | | `content`| A click on a link to a digitisation (scan) |
 |   | | `library_catalogue`| A click on a link to the library catalogue |
@@ -372,9 +442,9 @@ group by view_mode, action, sub_action;
 
 ### Events with class `list.item.external_link.click`
 
-External link clicks are triggered from the reading list and signal an intention of a user to go and view the thing clicked on. They don't necessarily mean that they go there, get past authentication and actually view the destination.
+External link clicks are triggered from the reading list and signal an intention of a user to go and view the thing clicked on. They don't necessarily mean that they go there, get past authentication and actually view the destination. 
 
-For example, they might click then immediately hit the back button if they didn't mean to actually go through and view. Or if they are not a logged in user, they may have been browsing the list but then not been able to actually view the digitisation when presented with a login challenge.
+For example, they might click then immediately hit the back button if they didn't mean to actually go through and view. Or if they are not a logged in user, they may have been browsing the list but then not been able to actually view the digitisation when presented with a login challenge. 
 
 It is best to think of an external link click as an expression of desire to view a particular type of item, rather than a count of actual views.
 
@@ -470,7 +540,7 @@ This event indicates that a digitisation has been viewed.
 
 | Column | Description | Example |
 | --- | --- | --- |
-| `dimension_1` | The tenancy short code | `broadminster` |
+| `dimension_1` | The tenancy short code | `broadminster` | 
 | `dimension_2` | The request id. Can be used to join to the `f_dc_requests` view. | `1673`
 | `dimension_3` | not used | |
 | `dimension_4` | not used | |
@@ -484,7 +554,7 @@ This event indicates whether the user has opened the print modal window in the c
 
 | Column | Description | Example |
 | --- | --- | --- |
-| `dimension_1` | The tenancy short code | `broadminster` |
+| `dimension_1` | The tenancy short code | `broadminster` | 
 | `dimension_2` | The request id. Can be used to join to the `f_dc_requests` view. | `1673`
 | `dimension_3` | not used | |
 | `dimension_4` | not used | |
@@ -494,11 +564,11 @@ This event indicates whether the user has opened the print modal window in the c
 
 ### Events with class `digitisation.print`
 
-This event is only emitted from Talis Elevate if the resource being viewed is a digitisation request. It is NOT emitted from Copyright Clearance. See note on the `digitisation.print.showModal` event.
+This event is only emitted from Talis Elevate if the resource being viewed is a digitisation request. It is NOT emitted from Copyright Clearance. See note on the `digitisation.print.showModal` event. 
 
 | Column | Description | Example |
 | --- | --- | --- |
-| `dimension_1` | The tenancy short code | `broadminster` |
+| `dimension_1` | The tenancy short code | `broadminster` | 
 | `dimension_2` | The request id. Can be used to join to the `f_dc_requests` view. | `1673`
 | `dimension_3` | not used | |
 | `dimension_4` | not used | |
@@ -510,11 +580,11 @@ This event is only emitted from Talis Elevate if the resource being viewed is a 
 
 This event is emitted whenever anyone requests a download of a digitisation in Talis Aspire Copyright Clearance. This could be either a direct request to download or via the print modal form.
 
-This event is also emitted in Talis Elevate when the user requests to download a resource which is copyright cleared.
+This event is also emitted in Talis Elevate when the user requests to download a resource which is copyright cleared. 
 
 | Column | Description | Example |
 | --- | --- | --- |
-| `dimension_1` | The tenancy short code | `broadminster` |
+| `dimension_1` | The tenancy short code | `broadminster` | 
 | `dimension_2` | The request id. Can be used to join to the `f_dc_requests` view. | `1673`
 | `dimension_3` | not used | |
 | `dimension_4` | not used | |
