@@ -177,11 +177,11 @@ A contributor is a user other than the owner of the content being viewed, and ty
 <br/>
 <a name="player-annotate-createannotation"></a>
 
-### Events with class `player.annotate.createannotation`, `player.annotate.createannotation.classcomment`, `player.annotate.createannotation.personalnote`, `player.annotate.createannotation.anonymouscomment`
+### Events with class `player.annotate.createannotation`, `player.annotate.createannotation.highlight`, `player.annotate.createannotation.pin`, `player.annotate.createannotation.classcomment`, `player.annotate.createannotation.personalnote`, `player.annotate.createannotation.anonymouscomment`
 
 A user has added a comment to a Talis Elevate player resource.
 
-`player.annotate.createannotation` includes a count of events for all of the sub classes `player.annotate.createannotation.classcomment`, `player.annotate.createannotation.personalnote`, `player.annotate.createannotation.anonymouscomment`. Counting all four classes will result in counting events twice.
+`player.annotate.createannotation` includes a count of events for all of the sub classes `player.annotate.createannotation.highlight`, `player.annotate.createannotation.pin`,`player.annotate.createannotation.classcomment`, `player.annotate.createannotation.personalnote`, `player.annotate.createannotation.anonymouscomment`. Counting all four classes will result in counting events twice.
 
 Replies to initial comments are counted in a separate event `player.annotate.createreply`.
 
