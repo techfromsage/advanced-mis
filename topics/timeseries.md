@@ -177,11 +177,16 @@ A contributor is a user other than the owner of the content being viewed, and ty
 <br/>
 <a name="player-annotate-createannotation"></a>
 
-### Events with class `player.annotate.createannotation`, `player.annotate.createannotation.classcomment`, `player.annotate.createannotation.personalnote`, `player.annotate.createannotation.anonymouscomment`
+### Events with class `player.annotate.createannotation`, `player.annotate.createannotation.highlight`, `player.annotate.createannotation.pin`, `player.annotate.createannotation.classcomment`, `player.annotate.createannotation.personalnote`, `player.annotate.createannotation.anonymouscomment`
 
 A user has added a comment to a Talis Elevate player resource.
 
-`player.annotate.createannotation` includes a count of events for all of the sub classes `player.annotate.createannotation.classcomment`, `player.annotate.createannotation.personalnote`, `player.annotate.createannotation.anonymouscomment`. Counting all four classes will result in counting events twice.
+A `player.annotate.createannotation` is emitted for every comment created. The sub-class events `player.annotate.createannotation.highlight`, `player.annotate.createannotation.pin`,`player.annotate.createannotation.classcomment`, `player.annotate.createannotation.personalnote`, `player.annotate.createannotation.anonymouscomment` are emitted in addition to the `player.annotate.createannotation` event, to indicate the type of annotation created.
+Each `player.annotate.createannotation` event will be accompanied by:
+- either a `player.annotate.createannotation.highlight` or a `player.annotate.createannotation.pin` event
+- either a `player.annotate.createannotation.classcomment`, a `player.annotate.createannotation.personalnote`, or a `player.annotate.createannotation.anonymouscomment` event
+
+When aggregating event counts, these groups of sub-classes should be treated as distinct sets, to avoid counting the same event multiple times.
 
 Replies to initial comments are counted in a separate event `player.annotate.createreply`.
 
