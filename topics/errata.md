@@ -16,5 +16,7 @@ The list of affected events are as follows:
 * `list.item.click`
 * `list.item.external_link.click`
 * `list.edit`
+* `list.item.report_broken_link`
+* `list.item.cancel_report_broken_link`
 
 All other list functions continued to work as normal and all edits to lists will have completed as expected.
