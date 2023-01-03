@@ -8,7 +8,7 @@ A list of updates to the data structure in Advanced MIS.
 
 If you notice a change in your data or reports it may be related to one of these updates.
 
-### FIXED: [INSERT DATE] - Talis Elevate Document Formats
+### 21st December 2022 - FIXED: Talis Elevate Document Formats
 
 Before this fix, a mixture of MIME types and other generic values were used in the `f_elevate_resources.format` field. Some documents might have had an empty format value.
 
