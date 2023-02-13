@@ -22,7 +22,7 @@ This summary shows which events are triggered under the given scenarios.  The sc
 * A click on a list to a view online button that points at a digitisation will record the following events.
   * An `event_class` of `list.item.click` that is categorized in `dimension_3` as an `<view_mode>:external_link:view_online_button` click. This reflects the **location** in the list that the user was clicking from and not necessarily the type of link that was clicked.
   * An `event_class` of `list.item.external_link.click` where the click is labelled as `digitisation`. This reflects the **type** of external link clicked, and not the location of the click in the item.
-* A view of a digitisation in the Talis Player will trigger the following event. This is not garunteed to have been triggered from a reading list.
+* A view of a digitisation in the Talis Player will trigger the following event. This is not guaranteed to have been triggered from a reading list.
   * An `event_class` of  `digitisation.view`
 
 ## The detail
