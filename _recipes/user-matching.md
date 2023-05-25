@@ -12,6 +12,8 @@ You would like to bring Talis Aspire or Talis Elevate data from Advanced MIS int
 
 You might be doing this to build out a learning or learner analytics system that can report on unique user usage across all the systems in your university.
 
+This article outlines which user identifiers are present in Talis products and how they might relate to your university systems.
+
 ## Method
 
 Essentially the method boils down to agreeing what you know about a user, and what Talis data knows about a user, and identifying which fields you have that can be used to 'JOIN' your data to our data.
@@ -41,7 +43,7 @@ Talis products have various data requirements around users and they each make ma
 
 ### The Opaque ID
 
-typically a university will send a SAML payload that includes the `eduPersonTargettedID` value. This is a persistent opaque identifier. this means that it is the same every time a user logs in but it is not actually an identifier that you will see in any of your other systems. i.e. it is unique for that user in the context of logging in to Talis Aspire from your Identity Provider.
+typically a university will send a SAML payload that includes the `eduPersonTargetedID` value. This is a persistent opaque identifier. this means that it is the same every time a user logs in but it is not actually an identifier that you will see in any of your other systems. i.e. it is unique for that user in the context of logging in to Talis Aspire from your Identity Provider.
 
 __If you use shibboleth__, this identifier is usually constructed as a hash of the following values.
 
@@ -60,7 +62,7 @@ __If you use a Microsoft ADFS or Azure type service__, there will be an opaque i
 
 #### Talis Aspire
 
-When a user logs in to Talis Aspire for the first time, their persistent id from the SAML conversation is stored in the user profile. Typically the `eduPersonTargettedID`, but this is not always the case and your connection with Talis Aspire may have been configured to use a different identifier location. You will need to ask Talis Support to find out what is configured, or you can look at the data and you may recognize the pattern of the identifier being used. 
+When a user logs in to Talis Aspire for the first time, their persistent id from the SAML conversation is stored in the user profile. Typically the `eduPersonTargetedID`, but this is not always the case and your connection with Talis Aspire may have been configured to use a different identifier location. You will need to ask Talis Support to find out what is configured, or you can look at the data and you may recognize the pattern of the identifier being used. 
 
 * `persistent_id` In Advanced MIS, this type of identifier is stored in the `f_rl_users.saml_user_id` field.
 * `talis_guid` In Advanced MIS, this type of identifier is stored in the `f_rl_users.talis_guid` field. You will also see it in events where there is a dimension column that is identifying which user caused the event.
