@@ -1,8 +1,9 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600,300,700);
 
 :root {
-  --brand-primary: #017d87;
-  --brand-accent: #005d64;
+  --brand-primary: #00E1BB;
+  --brand-accent: #017965;
+  --brand-blue: #1F1C3A
 }
 
 * {
@@ -183,13 +184,13 @@ pre {
 
 a {
   font-weight: 400;
-  color: var(--brand-primary);
-  text-decoration: none;
+  color: var(--brand-blue);
+  text-decoration: underline;
 }
 
 a:hover {
-  color: #005d64;
-  text-decoration: underline;
+  color: var(--brand-accent);
+  text-decoration: none;
 }
 
 a small {
@@ -197,7 +198,7 @@ a small {
   margin-top: -0.6em;
 
   font-size: 11px;
-  color: var(--brand-primary);
+  color: var(--brand-accent);
 }
 
 blockquote {
@@ -280,9 +281,28 @@ nav ul {
 
   list-style: none;
 }
+
+nav ul li a {
+  display: block;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  margin-right: 1rem;
+}
+
+nav ul li a:hover {
+  border-color: var(--brand-accent);
+}
+
 nav ul li.active a {
   font-weight: 600;
-  color: #495057;
+  color: var(--brand-blue);
+  border-color: var(--brand-blue);
+}
+nav ul li.active a:hover {
+  color: var(--brand-accent);
+  border-color: var(--brand-accent);
 }
 nav ul > ul {
   margin-bottom: 0;
