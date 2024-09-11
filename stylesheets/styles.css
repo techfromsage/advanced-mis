@@ -281,12 +281,28 @@ nav ul {
 
   list-style: none;
 }
+
+nav ul li a {
+  display: block;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  margin-right: 1rem;
+}
+
+nav ul li a:hover {
+  border-color: var(--brand-accent);
+}
+
 nav ul li.active a {
   font-weight: 600;
-  color: #495057;
+  color: var(--brand-blue);
+  border-color: var(--brand-blue);
 }
 nav ul li.active a:hover {
   color: var(--brand-accent);
+  border-color: var(--brand-accent);
 }
 nav ul > ul {
   margin-bottom: 0;
