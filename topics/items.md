@@ -55,9 +55,9 @@ body_class: items
 | `month_added` | `INTEGER` | Month of when the list was created, values `1-12` | `12` |
 | `week_added` | `INTEGER` | ISO 8601 week of when the list was created, note Monday is the start of the ISO 8601 week, values `1-53` | `52` |
 | `dow_added` | `INTEGER` | Day of week of when the list was created, values `0-6`, Sunday is `0` | `5` |
-| `primary_web_address` | `VARCHAR(4096)` | If a chapter or similar 'part' is present in a bookmark, this will be the link of the chapter | |
-| `secondary_web_address` | `VARCHAR(4096)` | This will be the link to the 'whole' bookmark if there is one | |
-| `online_resource_web_address` | `VARCHAR(4096)` | If the Online Resource Source for the bookmark is 'Web Address' then this will be the link in this field | |
+| `primary_web_address` | `VARCHAR(4096)` | This will be the web address field of the main part of the bookmark. Often the one for the Article or Chapter. Semicolon + space `; ` separated if there are multiple web addresses. | `http://...; https://` |
+| `secondary_web_address` | `VARCHAR(4096)` | This will be the web address field in the secondary part of the bookmark. Often the one for the Book or Journal. Semicolon + space `; ` separated if there are multiple web addresses. | `http://...; https://` |
+| `online_resource_web_address` | `VARCHAR(4096)` | If the Online Resource Source for the bookmark is 'Web Address' then the user selected web address will be the single URL in this field. Will be blank if Online Resource Source is set to anything else | |
 | `online_resource_source` | `VARCHAR(4096)` | Will show whether the DOI, Open URL or Web Address is chosen as the source for the view online button | `DOI`, `Open URL`, `Web Address` |
 | `has_upload_file` | `VARCHAR(3)` | Whether or not a Talis Engage file is attached to the list item  | `Yes` |
 | `list_resource_content_file_type` | `VARCHAR(10)` | The file type of the Talis Engage file | `pdf` |
