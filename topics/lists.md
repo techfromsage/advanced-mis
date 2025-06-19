@@ -62,6 +62,6 @@ body_class: lists
 | `student_numbers` | `INTEGER` | Numbers of students | `84`
 | `default_list_view` | `VARCHAR(255)` | whether the list is using the new list view. 'Beta' refers to the new list view. 'Classic' refers to the old list view. | `Beta is default`
 | `internal_note` | `VARCHAR(4096)` | Textual information about the list that is only visible to staff. The note will be truncated if it is longer than 4096 characters. | `example note for staff` |
-| `description` | `VARCHAR(4096)` | Textual information about the list visible to all users. The note will be truncated if it is longer than 4096 characters. | `example note` |
+| `description` | `VARCHAR(4096)` | Textual information about the list visible to all users. The description will be truncated if it is longer than 4096 characters. | `example note` |
 
 **WARNING:** The data dictionary is subject to change. For that reason always refer to column names directly in your SQL statements, not column positions.
