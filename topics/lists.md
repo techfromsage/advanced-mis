@@ -18,7 +18,7 @@ body_class: lists
 ### Columns
 
 | Column Name | Datatype | Description | Example
-| --- | --- | --- | --- | 
+| --- | --- | --- | --- |
 | `url` | `VARCHAR(4096)` | Canonical URL of the reading list |
 | `list_guid` | `VARCHAR(4096)` | Globally Unique ID for the reading list. This should be used for joining to other data. | `DE53F159-8AE9-F8D4-6518-263DED7D56E9` |
 | `title` | `VARCHAR(4096)` | Reading list title |
@@ -61,5 +61,7 @@ body_class: lists
 | `privacy_control` | `VARCHAR(255)` | `Private` or `Public` | `Public`
 | `student_numbers` | `INTEGER` | Numbers of students | `84`
 | `default_list_view` | `VARCHAR(255)` | whether the list is using the new list view. 'Beta' refers to the new list view. 'Classic' refers to the old list view. | `Beta is default`
+| `internal_note` | `VARCHAR(4096)` | Textual information about the list that is only visible to staff. The note will be truncated if it is longer than 4096 characters. | `example note for staff` |
+| `description` | `VARCHAR(4096)` | Textual information about the list visible to all users. The description will be truncated if it is longer than 4096 characters. | `example note` |
 
 **WARNING:** The data dictionary is subject to change. For that reason always refer to column names directly in your SQL statements, not column positions.

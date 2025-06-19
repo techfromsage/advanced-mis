@@ -48,10 +48,18 @@ body_class: items
 | `digitisation_id` | `VARCHAR(255)` | ID of the digitisation request in Talis Aspire Digitised Content that this item is linked to | `22` |
 | `digitisation_status` | `VARCHAR(32)` | Status of the digitisation, e.g. `LIVE`, `EXPIRED` | `LIVE` |
 | `has_container` | `VARCHAR(255)` | The parent container GUID of the item - could be the list itself, or a section within the list. Prefixed with the type `tenantLists` or `tenantSections` to mark out type  | `tenantSections:9CBA2921-17BD-0A62-7942-421DCD8E79E6` |
-| `date_added` | `TIMESTAMP` | Date the item was added to the list | `2016-01-12 00:00:00.0`
+| `date_added` | `TIMESTAMP` | Date the item was added to the list | `2016-01-12 00:00:00.0` |
+| `library_note` | `VARCHAR(4096)` | Textual information about the item only visible to staff | `Example library note` |
+| `student_note` | `VARCHAR(4096)` | Textual information about the item visible to all users | `Example student note` |
 | `year_added` | `INTEGER` | Year of when the list was created | `2018` |
 | `month_added` | `INTEGER` | Month of when the list was created, values `1-12` | `12` |
 | `week_added` | `INTEGER` | ISO 8601 week of when the list was created, note Monday is the start of the ISO 8601 week, values `1-53` | `52` |
 | `dow_added` | `INTEGER` | Day of week of when the list was created, values `0-6`, Sunday is `0` | `5` |
+| `primary_web_address` | `VARCHAR(4096)` | This will be the web address field of the main part of the bookmark. Often the one for the Article or Chapter. Semicolon + space `; ` separated if there are multiple web addresses. | `http://...; https://` |
+| `secondary_web_address` | `VARCHAR(4096)` | This will be the web address field in the secondary part of the bookmark. Often the one for the Book or Journal. Semicolon + space `; ` separated if there are multiple web addresses. | `http://...; https://` |
+| `online_resource_web_address` | `VARCHAR(4096)` | If the Online Resource Source for the bookmark is 'Web Address' then the user selected web address will be the single URL in this field. Will be blank if Online Resource Source is set to anything else | |
+| `online_resource_source` | `VARCHAR(4096)` | Will show whether the DOI, Open URL or Web Address is chosen as the source for the view online button | `DOI`, `Open URL`, `Web Address` |
+| `has_upload_file` | `VARCHAR(3)` | Whether or not a Talis Engage file is attached to the list item  | `Yes` |
+| `list_resource_content_file_type` | `VARCHAR(10)` | The file type of the Talis Engage file | `pdf` |
 
 **WARNING:** The data dictionary is subject to change. For that reason always refer to column names directly in your SQL statements, not column positions.
