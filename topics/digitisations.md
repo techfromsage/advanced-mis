@@ -40,6 +40,6 @@ body_class: digitisations
 | `requester_email` | `VARCHAR(255)` | Email of the person making the request | `52` |
 | `rl_item_url` | `VARCHAR(255)` | If the item is linked to a reading list item, the canonical URL of that item |  |
 | `item_guid` | `VARCHAR(255)` | The guid of the reading list item, to be used for joining data | `478A70D8-C627-91EC-D681-FFE617FABDD9` |
-| `request_type` | `VARCHAR(32)` | The request's type. Permited values: `digitisations`, `coursereserves`, and `fileupload` | `digitisations` |
+| `request_type` | `VARCHAR(32)` | The request's type. Permitted values: `digitisations`, `coursereserves`, and `fileupload` | `digitisations` |
 
 **WARNING:** The data dictionary is subject to change. For that reason always refer to column names directly in your SQL statements, not column positions.
